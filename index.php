@@ -47,9 +47,9 @@
 </nav>
 
 <!-- Scrollers -->
-<div class="w3-container " style="width:100%;height:164px;margin-top:80px;" id="scrollers">
+<div class="" style="width:100%;height:164px;margin-top:80px;" id="scrollers">
   <span>Ne propustite trenutna događanja..</span>
-  <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr 1fr">
+  <div class="w3-grid grid4">
 		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
 				<header class="w3-container">
           <h6 class="w3-underline">Stolni tenis</h6>
@@ -86,7 +86,7 @@
         </div>
         </footer>
 		</div>
-		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
+		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top mobileHide">
 				<header class="w3-container">
           <h6 class="w3-underline">Košarka</h6>
 				</header>
@@ -104,7 +104,7 @@
         </div>
         </footer>
 	  </div>
-    <div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
+    <div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top mobileHide">
 				<header class="w3-container">
           <h6 class="w3-underline">Badminton</h6>
 				</header>
@@ -126,10 +126,10 @@
 </div>
 
 <!-- About Section -->
-<div class="w3-container " style="padding:16px 16px;" id="home">
+<div class="w3-main-container " style="padding:16px 16px;" id="home">
 	<div class="grid-container">
 		<div class="item2 border-right">
-			<button class="w3-btn w3-block leftBorderAnimate ">Nogomet <span class="w3-badge">5</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate ">Nogomet <span class="w3-badge ">5</span></button>
 			<button class="w3-btn w3-block leftBorderAnimate ">Košarka <span class="w3-badge">2</span></button>
 			<button class="w3-btn w3-block leftBorderAnimate ">Rukomet <span class="w3-badge">2</span></button>
 			<button class="w3-btn w3-block leftBorderAnimate">Stolni tenis <span class="w3-badge">3</span></button>
@@ -151,11 +151,12 @@
       <span class="w3-jumbo w3-hide-small">Uživaj u sportu, Zagreb nudi puno</span><br>
       <span class="w3-xxlarge w3-hide-large w3-hide-medium">Uživaj u sportu, Zagreb nudi puno</span><br>
       <p class="w3-large">U zdravom tijelu zdrav duh</p>
-      <p class="w3-medium">Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane. Isprobaj pretragu po četvrtima na mapi 
+      <p class="w3-medium">Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.</p>
+      <p> Isprobaj pretragu po četvrtima na mapi 
       <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-link w3-btn w3-tiny w3-wide">Zagrebačke četvrti</a></p>
       <p>
         <div class="w3-half">
-          <input class="w3-input w3-border-0 inputs" type="text" placeholder="Upiši termin za pretragu..">
+          <input class="w3-input inputs" type="text" placeholder="Upiši termin za pretragu..">
         </div>
         <div class="w3-half">
           <button class="w3-button w3-indigo w3-padding-large w3-small w3-color-black w3-border-0">Pretraži</button>
@@ -318,12 +319,13 @@
     Cookies -  https://www.aboutcookies.org/.</p>
   </div>
 </div>
+
 <div id="kartaCetvrti" class="w3-modal w3-animate-zoom w3-backcolor w3-color" >
   <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="this.parentElement.style.display='none'" title="Close Modal Image">×</span>
   <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
     <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr">
       <div>
-        <img src="public/img/gradskeCetvrti.png" class="w3-image" alt="">
+        <img src="public/img/gradskeCetvrti.png" class="" alt="">
       </div>
       <div>
         <ul class="w3-ul">
@@ -352,7 +354,8 @@
     </div>
   </div>
 </div>
-<!-- Contact Section -->
+
+<!-- Contact Section trenutno skrivnemo-->
 <div class="w3-container hidden" style="padding:28px 16px" id="contact">
   <h3 class="w3-center">CONTACT</h3>
   <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
@@ -381,7 +384,7 @@
 <footer class="w3-center w3-padding-64 glass3 defaultMargins">
   <a href="#home" class="w3-button w3-indigo"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <hr>
-  <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr;align-items:center;">
+  <div class="w3-grid grid3">
   <div class="w3-xlarge w3-section">
     <h5>Podijeli sa društvom</h5>
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
