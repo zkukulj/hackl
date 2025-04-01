@@ -115,6 +115,23 @@
 .w3-main-container{
     padding:16px 16px;
 }
+.content{
+    min-height:45px;
+}
+#scrollers{
+    margin-left:10px;
+    margin-right:10px;
+    height:164px;
+    margin-top:80px;
+}
+.w3-panel:not(:first-child):before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%; /* adjust this value to control the height of the border */
+  height: 60%; /* adjust this value to control the height of the border */
+  border-left: 4px solid #f5efef; /* adjust this value to control the border style and color */
+}
  /* Mobile overrides */
 @media (max-width: 500px){
     .grid4{
@@ -131,6 +148,12 @@
     }
     .padd48{
         padding:2px;
+    }
+    .w3-half{
+      margin-top:6px;
+    }
+    #scrollers{
+        text-align: center;
     }
 }
 @media (min-width: 501px) and (max-width: 1023px){

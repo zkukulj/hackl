@@ -120,6 +120,12 @@
 .w3-main-container{
     padding:16px 16px;
 }
+#scrollers{
+    margin-left:10px;
+    margin-right:10px;
+    height:164px;
+    margin-top:80px;
+}
  /* Mobile overrides */
 @media (max-width: 500px){
     .grid4{
@@ -136,6 +142,12 @@
     }
     .padd48{
         padding:2px;
+    }
+    .w3-half{
+      margin-top:6px;
+    }
+    #scrollers{
+        text-align: center;
     }
 }
 @media (min-width: 501px) and (max-width: 1023px){

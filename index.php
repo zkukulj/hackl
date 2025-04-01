@@ -47,10 +47,10 @@
 </nav>
 
 <!-- Scrollers -->
-<div class="" style="width:100%;height:164px;margin-top:80px;" id="scrollers">
+<div class="" id="scrollers">
   <span>Ne propustite trenutna događanja..</span>
   <div class="w3-grid grid4">
-		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
+		<div class="w3-panel w3-indigo w3-margin-top">
 				<header class="w3-container">
           <h6 class="w3-underline">Stolni tenis</h6>
 				</header>
@@ -58,6 +58,9 @@
           <span>Stolnoteniski turnir za rekreativce</span>
         </div>
         <footer>
+          <div class="w3-left">
+            <span>01.03.2025</span>
+          </div>
           <div class="w3-right">
             <i class="fa fa-facebook-official w3-hover-opacity"></i>
             <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -65,10 +68,10 @@
             <i class="fa fa-pinterest-p w3-hover-opacity"></i>
             <i class="fa fa-twitter w3-hover-opacity"></i>
             <i class="fa fa-linkedin w3-hover-opacity"></i>
-        </div>
+          </div>
         </footer>
 	  </div>
-    <div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
+    <div class="w3-panel w3-indigo w3-margin-top">
 				<header class="w3-container">
           <h6 class="w3-underline">Plivanje</h6>
 				</header>
@@ -76,6 +79,9 @@
           <span>Upis u školu plivanja na bazenu Mladost</span>
         </div>
         <footer>
+          <div class="w3-left">
+            <span>01.03.2025</span>
+          </div>
           <div class="w3-right">
             <i class="fa fa-facebook-official w3-hover-opacity"></i>
             <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -86,7 +92,7 @@
         </div>
         </footer>
 		</div>
-		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top mobileHide">
+		<div class="w3-panel w3-indigo w3-margin-top mobileHide">
 				<header class="w3-container">
           <h6 class="w3-underline">Košarka</h6>
 				</header>
@@ -94,17 +100,20 @@
           <span>3 x 3 hakl turnir za rekreativce</span>
         </div>
         <footer>
-        <div class="w3-right">
-            <i class="fa fa-facebook-official w3-hover-opacity"></i>
-            <i class="fa fa-instagram w3-hover-opacity"></i>
-            <i class="fa fa-snapchat w3-hover-opacity"></i>
-            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-            <i class="fa fa-twitter w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
-        </div>
+          <div class="w3-left">
+            <span>01.03.2025</span>
+          </div>
+          <div class="w3-right">
+              <i class="fa fa-facebook-official w3-hover-opacity"></i>
+              <i class="fa fa-instagram w3-hover-opacity"></i>
+              <i class="fa fa-snapchat w3-hover-opacity"></i>
+              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+              <i class="fa fa-twitter w3-hover-opacity"></i>
+              <i class="fa fa-linkedin w3-hover-opacity"></i>
+          </div>
         </footer>
 	  </div>
-    <div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top mobileHide">
+    <div class="w3-panel w3-indigo w3-margin-top mobileHide">
 				<header class="w3-container">
           <h6 class="w3-underline">Badminton</h6>
 				</header>
@@ -112,14 +121,17 @@
           <span>Badminton treninzi na velesajmu</span>
         </div>
         <footer>
-        <div class="w3-right">
-            <i class="fa fa-facebook-official w3-hover-opacity"></i>
-            <i class="fa fa-instagram w3-hover-opacity"></i>
-            <i class="fa fa-snapchat w3-hover-opacity"></i>
-            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-            <i class="fa fa-twitter w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
-        </div>
+          <div class="w3-left">
+            <span>01.03.2025</span>
+          </div>
+          <div class="w3-right">
+              <i class="fa fa-facebook-official w3-hover-opacity"></i>
+              <i class="fa fa-instagram w3-hover-opacity"></i>
+              <i class="fa fa-snapchat w3-hover-opacity"></i>
+              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+              <i class="fa fa-twitter w3-hover-opacity"></i>
+              <i class="fa fa-linkedin w3-hover-opacity"></i>
+          </div>
         </footer>
 		</div>
   </div>
