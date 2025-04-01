@@ -1,120 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>Zagreb Sport</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="public/css/scrollbar.css">
-<style>
-  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-  body, html {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    letter-spacing: 2px;
-  }
-
-  .w3-bar .w3-button {
-    padding: 16px;
-  }
-  /* Defaults */
-  .glass {
-      background: rgba(7, 23, 101, 0.9);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      /* border: 1px solid rgba(255, 255, 255, 0.7);*/
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: aliceblue;
-    background-image:url('public/img/sports4.png');background-size:contain;background-blend-mode: lighten;
-  }
-
-  .glass3 {
-    background-color: dodgerblue;
-    padding: 10px;
-    opacity:0.8;
-  }
-
-  .glass2 {
-      background: rgba(30, 144, 255, 0.8);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: bisque;
-    padding:10px;
-  }
-  .glass-border{
-    border:none;
-    border-radius: 0;
-  }
-  .hidden{
-    display:none !important;
-  }
-  .border-left{
-    border-left:1px solid white;
-  }
-  .border-right{
-    border-right:1px solid white;
-  }
-  .grid-container {
-    display: grid;
-    grid-template-areas:
-      'header header header header header header'
-      'menu main main main main right'
-      'menu footer footer footer footer footer';
-    gap: 10px;
-    background-color: dodgerblue;
-    padding: 10px;
-    opacity:0.8;
-  }
-  .item2 { grid-area: menu; }
-  .item3 { grid-area: main; }
-  .item4 { grid-area: right; }
-
-  .sponsorBlock{
-    min-width:144px;
-    text-align:center;
-  }
-  .inputs{
-    -webkit-text-stroke-color: darkgray;
-  }
-  .w3-dodgerblue{
-    background-color: dodgerblue;
-  }
-  .padd48 {
-    padding:48px;
-  }
-  .defaultMargins{
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  .item2>button{
-    letter-spacing: 2px;;
-  }
-  .sponsorImage{
-    width: 110px;
-    height: auto;
-  }
-  header>h2{
-    text-decoration: underline;
-  }
-</style>
+<link rel="stylesheet" href="public/css/leftBorderAnimate.css">
+<link rel="stylesheet" href="public/css/main2.css">
 </head>
 <body class="glass">
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-card glass2 glass-border" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide">ZAGREB SPORT</a>
     <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
+    <div class="w3-right w3-hide-small hidden">
       <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
@@ -139,36 +43,68 @@
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
+<!-- Scrollers -->
+<div class="w3-container " style="width:100%;height:164px;margin-top:80px;" id="scrollers">
+  <span>Ne propustite trenutna događanja..</span>
+  <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr 1fr">
+		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
+				<header class="w3-container">
+          <h4>Stolni tenis</h4>
+					<h6>Stolnoteniski turnir za rekreativce i sve stolnoteniske entuzijaste</h6>
+				</header>
+	  </div>
+    <div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
+				<header class="w3-container">
+          <h4>Plivanje</h4>
+					<h6>Upis u školu plivanja na bazenu Mladost</h6>
+				</header>
+		</div>
+		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
+				<header class="w3-container">
+          <h4>Stolni tenis</h4>
+					<h6>Stolnoteniski turnir za rekreativce i sve stolnoteniske entuzijaste</h6>
+				</header>
+	  </div>
+    <div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
+				<header class="w3-container">
+          <h4>Plivanje</h4>
+					<h6>Upis u školu plivanja na bazenu Mladost</h6>
+				</header>
+		</div>
+  </div>
+</div>
+
 <!-- About Section -->
-<div class="w3-container " style="padding:128px 16px;" id="home">
+<div class="w3-container " style="padding:16px 16px;" id="home">
 	<div class="grid-container">
 		<div class="item2 border-right">
-			<button class="w3-button w3-block">Nogomet</button>
-			<button class="w3-button w3-block">Košarka</button>
-			<button class="w3-button w3-block">Rukomet</button>
-			<button class="w3-button w3-block">Stolni tenis</button>
-			<button class="w3-button w3-block">Tenis</button>
-			<button class="w3-button w3-block">Badminton</button>
-			<button class="w3-button w3-block">Odbojka</button>
-			<button class="w3-button w3-block">Padel</button>
-			<button class="w3-button w3-block">Hokej</button>
-			<button class="w3-button w3-block">Atletika</button>
-			<button class="w3-button w3-block">Plivanje</button>
-			<button class="w3-button w3-block">Vaterpolo</button>
-			<button class="w3-button w3-block">Veslanje</button>
-			<button class="w3-button w3-block">Ragbi</button>
-			<button class="w3-button w3-block">Streličarstvo</button>
-			<button class="w3-button w3-block">Šah</button>
+			<button class="w3-btn w3-block leftBorderAnimate ">Nogomet <span class="w3-badge">5</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate ">Košarka <span class="w3-badge">2</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate ">Rukomet <span class="w3-badge">2</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Stolni tenis <span class="w3-badge">3</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Tenis <span class="w3-badge">5</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Badminton <span class="w3-badge">1</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Odbojka <span class="w3-badge">2</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Padel <span class="w3-badge">2</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Hokej <span class="w3-badge">1</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Atletika <span class="w3-badge">7</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Plivanje <span class="w3-badge">5</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Vaterpolo <span class="w3-badge">5</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Veslanje <span class="w3-badge">5</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Ragbi <span class="w3-badge">5</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Streličarstvo <span class="w3-badge">5</span></button>
+			<button class="w3-btn w3-block leftBorderAnimate">Šah <span class="w3-badge">5</span></button>
 		</div>
 		
 		<div class="w3-text-white item3 padd48">
       <span class="w3-jumbo w3-hide-small">Uživaj u sportu, Zagreb nudi puno</span><br>
       <span class="w3-xxlarge w3-hide-large w3-hide-medium">Uživaj u sportu, Zagreb nudi puno</span><br>
       <p class="w3-large">U zdravom tijelu zdrav duh</p>
-      <p class="w3-medium">Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane</p>
+      <p class="w3-medium">Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane. Isprobaj pretragu po četvrtima na mapi 
+      <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-link w3-btn w3-tiny w3-wide">Zagrebačke četvrti</a></p>
       <p>
         <div class="w3-half">
-          <input class="w3-input  w3-border-0 inputs" type="text" placeholder="Upiši termin za pretragu..">
+          <input class="w3-input w3-border-0 inputs" type="text" placeholder="Upiši termin za pretragu..">
         </div>
         <div class="w3-half">
           <button class="w3-button w3-indigo w3-padding-large w3-small w3-color-black w3-border-0">Pretraži</button>
@@ -195,12 +131,13 @@
 		
 	</div>
 </div>
-	<!-- Događanja -->
+
+<!-- Događanja -->
 	<div class="w3-container glass3 defaultMargins" style="padding:28px 16px">
 		<h3 class="w3-center">Trenutna sportska događanja u gradu Zagrebu</h3>
     <hr>
     <!-- Događanje 1 za datum -->
-		<h2 class="w3-center w3-color" style="color:white;" >01.05.2025</h2>
+		<h2 class="w3-center w3-color" >01.05.2025</h2>
 
 		<div class="w3-container" style="padding:28px 16px">
 			<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
@@ -267,15 +204,103 @@
 		</div>
 
 	</div>
+
 <!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+<div id="modal01" class="w3-modal w3-color w3-backcolor" onclick="this.style.display='none'">
   <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
   <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
     <img id="img01" class="w3-image">
     <p id="caption" class="w3-opacity w3-large"></p>
   </div>
 </div>
+<!-- Modal for full size images on click-->
+<div id="modalKolacici" class="w3-modal w3-color w3-backcolor w3-animate-zoom">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="this.parentElement.style.display='none'" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-center w3-transparent w3-padding-64">
+    <p>Izjava o kolačićima</p>
+    <p>Izjava o kolačićima (Cookie policy)
+    Kako bismo vam pružili najbolje iskustvo naše stranice te kako bi stranica radila ispravno, ova stranica na vaše računalo sprema malu količinu informacija (cookies - kolačići). 
+    Korištenjem stranica pristajete na uporabu kolačića. Blokiranjem kolačića i dalje možete pregledavati stranicu, no neke njezine funkcionalnosti neće Vam biti dostupne.</p>
 
+    <p>Što je kolačić?</p>
+    <p>Kolačić je informacija spremljena na Vaše računalo od strane web-stranice koju posjetite. Kolačići omogućuju stranici da 
+    prikaže informacije prilagođene Vašim potrebama. Oni obično spremaju Vaše postavke i postavke za web-stranicu, kao što su preferirani jezik, 
+    e-mail adresa ili lozinka. Poslije, kada opet otvorite istu web-stranicu, 
+    internetski preglednik šalje natrag kolačiće koji pripadaju toj stranici.</p>
+
+    <p>Isto tako nama omogućuju da mjerimo posjećenost i izvore prometa na našim web-stranicama te sukladno tomu možemo poboljšati 
+    performanse na našim stranicama.</p>
+
+    <p>Sve informacije koje kolačići prikupljaju akumuliraju se i anonimne su, a omogućuju nam praćenje učinkovitosti stranice i 
+    ne dijele se ni s kojim drugim subjektima.</p>
+
+    <p>Sve ove informacije mogu biti spremljene jedino ako Vi to omogućite, web-stranice ne mogu dobiti pristup informacijama koji 
+    im Vi niste dali i ne mogu pristupiti drugim datotekama na Vašem računalu.</p>
+
+    <p>Onemogućavanje kolačića</p>
+    <p>Isključivanjem kolačića odlučujete hoćete li dopustiti pohranjivanje kolačića na Vašem računalu. 
+    Postavke kolačića mogu se kontrolirati i konfigurirati u Vašem web-pregledniku. 
+    Ako onemogućite kolačiće, nećete moći upotrebljavati neke od funkcionalnosti na našim web-stranicama.</p>
+
+    <p>Isključivanje (Opting out)
+    Prema zadanim postavkama pretraživanja mrežne stranice posjetitelja prati 
+    Google Analytics kako bi se izradili anonimni statistički podaci koji se rabe za unapređenje korisničkog iskustva.</p>
+
+    <p>Nemoj me pratiti preferencije</p>
+    <p>Nemoj me pratiti funkcija je koja posjetiteljima omogućuje isključivanje opcije da ih mrežne 
+    stranice prate u bilo koju svrhu, uključujući uporabu servisa za analitiku, 
+    oglašivačkih mreža i društvenih platformi. Opcije Nemoj me pratiti dostupne su u nizu preglednika, uključujući:
+
+    Firefox,
+    Internet Explorer,
+    Chrome,
+    Safari,
+    Opera</p>
+    
+
+    <p>ako u svojem pregledniku omogućite opciju Nemoj me pratiti, Google Analytics poštovat će vaš izbor;
+    ako ste omogućili opciju Nemoj me pratiti, neće Vas se pratiti. To predstavlja dodatak isključivanja prikupljanja i analize podataka za izradu statističkih podataka za našu web-stranicu;
+    ako niste omogućili opciju Nemoj me pratiti, ali odlučite isključiti se, kolačić piwik_ignore  bit će pohranjen u Vašem pregledniku. Nijednog posjetitelja s kolačićem piwik_ignore Google Analytics neće pratiti;
+    ako ste na svojem pregledniku onemogućili sve kolačiće, i dalje ćemo prikupljati neke općenite podatke o Vašem pretraživanju (npr. broj posjetitelja na našoj stranici), ali oni će biti manje precizni i Vaši posjeti neće biti praćeni (ne upotrebljavaju se Piwik kolačići)
+    Više o kolačićima možete naći ovdje:
+
+    Cookies -  https://www.aboutcookies.org/.</p>
+  </div>
+</div>
+<div id="kartaCetvrti" class="w3-modal w3-animate-zoom w3-backcolor w3-color" >
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="this.parentElement.style.display='none'" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr">
+      <div>
+        <img src="public/img/gradskeCetvrti.png" class="w3-image" alt="">
+      </div>
+      <div>
+        <ul class="w3-ul">
+                <li>1. Donji grad</li>
+                <li>2. Gornji grad – Medveščak</li>
+                <li>3. Trnje</li>
+                <li>4. Maksimir</li>
+                <li>5. Peščenica – Žitnjak</li>
+                <li>6. Novi Zagreb – istok</li>
+                <li>7. Novi Zagreb – zapad</li>
+                <li>8. Trešnjevka – sjever</li>
+                <li>9. Trešnjevka – jug</li>
+                <li>10. Črnomerec</li>
+                <li>11. Gornja Dubrava</li>
+                <li>12. Donja Dubrava</li>
+                <li>13. Stenjevec</li>
+                <li>14. Podsused – Vrapče</li>
+                <li>15. Podsljeme</li>
+                <li>16. Sesvete</li>
+                <li>17. Brezovica</li>
+              </ul>
+      </div>
+      <div>
+        Lista događanja
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Contact Section -->
 <div class="w3-container hidden" style="padding:28px 16px" id="contact">
   <h3 class="w3-center">CONTACT</h3>
@@ -304,6 +329,7 @@
 <!-- Footer -->
 <footer class="w3-center w3-padding-64 glass3 defaultMargins">
   <a href="#home" class="w3-button w3-indigo"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr">
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -312,7 +338,14 @@
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-  <p>Powered by <a href="#" title="Hackl" target="_blank" class="w3-hover-text-green">Hackl</a></p>
+  <div>
+    <p>Powered by <a href="#" title="Hackl" target="_blank" class="w3-hover-text-green">Hackl</a></p>
+  </div>
+  <div>
+    <button onclick="document.getElementById('modalKolacici').style.display='block'" class="w3-button w3-indigo">O kolačićima</button>
+  </div>
+
+  </div>
 </footer>
  
 <script>

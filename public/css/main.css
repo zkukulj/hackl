@@ -1,0 +1,103 @@
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Poppins", sans-serif}
+  body, html {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 2px;
+  }
+
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+  /* Defaults */
+  .glass {
+      background: rgba(7, 23, 101, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      /* border: 1px solid rgba(255, 255, 255, 0.7);*/
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: aliceblue;
+    background-image:url('../img/sports4.png');
+    background-size:contain;background-blend-mode: lighten;
+  }
+
+  .glass3 {
+    background-color: dodgerblue;
+    padding: 10px;
+    opacity:0.8;
+  }
+
+  .glass2 {
+      background: rgba(30, 144, 255, 0.8);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: bisque;
+    padding:10px;
+  }
+  .glass-border{
+    border:none;
+    border-radius: 0;
+  }
+  .hidden{
+    display:none !important;
+  }
+  .border-left{
+    border-left:1px solid white;
+  }
+  .border-right{
+    border-right:1px solid white;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header header header header header'
+      'menu main main main main right'
+      'menu footer footer footer footer footer';
+    gap: 10px;
+    background-color: dodgerblue;
+    padding: 10px;
+    opacity:0.8;
+  }
+  .item2 { grid-area: menu; }
+  .item3 { grid-area: main; }
+  .item4 { grid-area: right; }
+
+  .sponsorBlock{
+    min-width:144px;
+    text-align:center;
+  }
+  .inputs{
+    -webkit-text-stroke-color: darkgray;
+  }
+  .w3-dodgerblue{
+    background-color: dodgerblue;
+  }
+  .padd48 {
+    padding:48px;
+  }
+  .defaultMargins{
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .item2>button{
+    letter-spacing: 2px;;
+  }
+  .sponsorImage{
+    width: 110px;
+    height: auto;
+  }
+  header>h2{
+    text-decoration: underline;
+  }
+  .w3-color{
+    color: white;
+  }
+  .w3-backcolor{
+    background: dodgerblue;
+  }
