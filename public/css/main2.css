@@ -86,12 +86,21 @@
   header>h2{
     text-decoration: underline;
   }
-  .w3-text-white, .w3-hover-text-white:hover {
-    color: #211f1f !important;
+    .w3-text-white, .w3-hover-text-white:hover {
+        color: #211f1f !important;
     }
-.w3-color{
-    color: black;
+    .w3-underline{
+        text-decoration: underline;
+    }
+    .w3-color{
+        color: black;
+    }
+    .w3-backcolor{
+        background: dodgerblue;
+    }
+  i{
+    cursor: pointer;
   }
-   .w3-backcolor{
-    background: dodgerblue;
-  }
+.w3-panel{
+    position:relative;
+}

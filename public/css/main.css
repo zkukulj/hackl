@@ -92,7 +92,10 @@
     width: 110px;
     height: auto;
   }
-  header>h2{
+  header > h2{
+    text-decoration: underline;
+  }
+  .w3-underline{
     text-decoration: underline;
   }
   .w3-color{
@@ -100,4 +103,10 @@
   }
   .w3-backcolor{
     background: dodgerblue;
+  }
+  i{
+    cursor: pointer;
+  }
+  .w3-panel{
+    position:relative;
   }

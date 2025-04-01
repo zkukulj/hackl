@@ -16,7 +16,10 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-card glass2 glass-border" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">ZAGREB SPORT</a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide">
+    ZAGREB SPORT
+    <!-- <img src="public/img/logo.png" class="w3-image" alt=""> -->
+    </a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small hidden">
       <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
@@ -49,27 +52,75 @@
   <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr 1fr">
 		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
 				<header class="w3-container">
-          <h4>Stolni tenis</h4>
-					<h6>Stolnoteniski turnir za rekreativce i sve stolnoteniske entuzijaste</h6>
+          <h6 class="w3-underline">Stolni tenis</h6>
 				</header>
+        <div class="content">
+          <span>Stolnoteniski turnir za rekreativce</span>
+        </div>
+        <footer>
+          <div class="w3-right">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        </footer>
 	  </div>
     <div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
 				<header class="w3-container">
-          <h4>Plivanje</h4>
-					<h6>Upis u školu plivanja na bazenu Mladost</h6>
+          <h6 class="w3-underline">Plivanje</h6>
 				</header>
+        <div class="content">
+          <span>Upis u školu plivanja na bazenu Mladost</span>
+        </div>
+        <footer>
+          <div class="w3-right">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        </footer>
 		</div>
 		<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
 				<header class="w3-container">
-          <h4>Stolni tenis</h4>
-					<h6>Stolnoteniski turnir za rekreativce i sve stolnoteniske entuzijaste</h6>
+          <h6 class="w3-underline">Košarka</h6>
 				</header>
+        <div class="content">
+          <span>3 x 3 hakl turnir za rekreativce</span>
+        </div>
+        <footer>
+        <div class="w3-right">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        </footer>
 	  </div>
     <div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
 				<header class="w3-container">
-          <h4>Plivanje</h4>
-					<h6>Upis u školu plivanja na bazenu Mladost</h6>
+          <h6 class="w3-underline">Badminton</h6>
 				</header>
+        <div class="content">
+          <span>Badminton treninzi na velesajmu</span>
+        </div>
+        <footer>
+        <div class="w3-right">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        </footer>
 		</div>
   </div>
 </div>
@@ -171,7 +222,7 @@
 
     <hr>
     <!-- Događanje 1 za datum -->
-		<h2 class="w3-center w3-color" style="color:white;" >03.05.2025</h2>
+		<h2 class="w3-center w3-color" >03.05.2025</h2>
 
 		<div class="w3-container" style="padding:28px 16px">
 			<div class="w3-panel w3-indigo w3-leftbar w3-rightbar w3-border-black w3-margin-top">
@@ -329,8 +380,10 @@
 <!-- Footer -->
 <footer class="w3-center w3-padding-64 glass3 defaultMargins">
   <a href="#home" class="w3-button w3-indigo"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr">
+  <hr>
+  <div class="w3-grid" style="grid-template-columns:1fr 1fr 1fr;align-items:center;">
   <div class="w3-xlarge w3-section">
+    <h5>Podijeli sa društvom</h5>
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-snapchat w3-hover-opacity"></i>
