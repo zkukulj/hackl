@@ -542,6 +542,17 @@
     }
   });
 </script>
-
+<script src="public/js/acctoolbar.min.js"></script>
+<script>
+// Accessibility tools script
+  window.onload = function() {
+    window.micAccessTool = new MicAccessTool({
+      link: 'http://your-awesome-website.com/your-accessibility-declaration.pdf',
+      contact: 'mailto:your-mail@your-awesome-website.com',
+      buttonPosition: 'right', // default is 'left'
+      forceLang: 'en-EN' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
+    });
+  }
+</script>
 </body>
 </html>
