@@ -332,7 +332,7 @@
 </div>
 
 <div id="kartaCetvrti" class="w3-modal w3-animate-zoom w3-white w3-color" >
-  <span class="w3-button w3-large w3-black w3-padding-small w3-display-topright" onclick="this.parentElement.style.display='none'" title="Close Modal Image">×</span>
+  <span class="w3-button w3-large w3-black w3-padding-small w3-display-topright" onclick="closeMap(this)" title="Close Modal Image">×</span>
   <div class="w3-modal-content w3-animate-zoom w3-transparent" style="width: 100%;position:relative;">
     <div class="modalGrid" >
       <div>
@@ -481,10 +481,17 @@
   const w3_close = () => {
       mySidebar.style.display = "none";
   }
-
-  const mapActions = (el) => {
-    alert("ok");
+  // close map modal and remove canvas if there
+  const closeMap = (el) => {
+    el.parentElement.style.display = 'none';
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.remove();
+    }
   }
+
+  // Draw clicked area on the image map
+  // Get the image and map elements
   const image = document.querySelector('img[usemap="#image-map"]');
   const map = document.querySelector('map[name="image-map"]');
 
