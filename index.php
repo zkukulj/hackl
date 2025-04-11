@@ -8,12 +8,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="public/css/scrollbar.css">
+<link rel="stylesheet" href="public/css/chat.css">
 <link rel="stylesheet" href="public/css/leftBorderAnimate.css">
 <link rel="stylesheet" href="public/css/main2.css">
 </head>
 <body class="glass">
+<div class="chatbox-bubble" onclick="open_chat(this)">💬</div>
+<div class="chatbox w3-animate-right">
+<div class="chatbox-toolbar">
+    <div class="chatbox-title">Trebate pomoć? Pitajte nas..</div>
+    <div class="chatbox-close" onclick="close_chat(this)">✖</div>
+</div>
+    <div class="chatbox-messages" id="chatbox-messages"></div>
+    <div class="chatbox-input">
+      <input type="text" id="chatbox-input" placeholder="Type a message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
+<div class="w3-top whitesmoke">
   <div class="w3-bar w3-card glass2 glass-border" id="myNavbar">
     <a href="#home" class="w3-bar-item w3-button w3-wide">
     ZAGREB SPORT
@@ -28,9 +41,14 @@
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
+      <i class="fa fa-bars" style="font-size:24px;" ></i>
+    </a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right" onclick="w3_open()">
+      <img src="public/img/hr.png" class="langIcon" alt="">
+    </a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right" onclick="w3_open()">
+      <img src="public/img/en.png" class="langIcon" alt="">
     </a>
   </div>
 </div>
@@ -164,7 +182,7 @@
       <p class="w3-large">U zdravom tijelu zdrav duh</p>
       <p class="w3-medium">Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.</p>
       <p> Isprobaj pretragu po četvrtima na mapi 
-      <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-link w3-btn w3-tiny w3-wide">Zagrebačke četvrti</a></p>
+      <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-tiny w3-wide">Zagrebačke četvrti</a></p>
       <p>
         <div class="w3-half">
           <input class="w3-input inputs" type="text" placeholder="Upiši termin za pretragu..">
@@ -276,6 +294,7 @@
     <p id="caption" class="w3-opacity w3-large"></p>
   </div>
 </div>
+
 <!-- Modal for full size images on click-->
 <div id="modalKolacici" class="w3-modal w3-color w3-backcolor w3-animate-zoom">
   <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="this.parentElement.style.display='none'" title="Close Modal Image">×</span>
@@ -525,13 +544,13 @@
   const getOrCreateCanvas = (x, y, width, height) => {
     console.log('getOrCreateCanvas called');
     const existingCanvas = document.querySelector('canvas');
-    if (existingCanvas) {
-      existingCanvas.style.left = `${x}px`;
-      existingCanvas.style.top = `${y}px`;
-      existingCanvas.width = width;
-      existingCanvas.height = height;
-      return existingCanvas;
-    }
+    // if (existingCanvas) {
+    //   existingCanvas.style.left = `${x}px`;
+    //   existingCanvas.style.top = `${y}px`;
+    //   existingCanvas.width = width;
+    //   existingCanvas.height = height;
+    //   return existingCanvas;
+    // }
     const newCanvas = document.createElement('canvas');
     newCanvas.style.position = 'absolute';
     newCanvas.style.left = `${x}px`;
@@ -544,11 +563,13 @@
   }
   // Add an event listener to the map
   map.addEventListener('click', (event) => {
+    console.log(event.target.tagName);
     if (event.target.tagName === 'AREA') {
       drawClickedArea(event.target);
     }
   });
 </script>
+<script src="public/js/chat.js"></script>
 <script src="public/js/acctoolbar.min.js"></script>
 <script>
 // Accessibility tools script
@@ -556,7 +577,7 @@
     window.micAccessTool = new MicAccessTool({
       link: 'http://your-awesome-website.com/your-accessibility-declaration.pdf',
       contact: 'mailto:your-mail@your-awesome-website.com',
-      buttonPosition: 'right', // default is 'left'
+      buttonPosition: 'left', // default is 'left'
       forceLang: 'en-EN' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
     });
   }

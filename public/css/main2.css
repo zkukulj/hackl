@@ -5,12 +5,24 @@
     flex-direction: column;
     letter-spacing: 2px;
     color:black;
+    background-image: url("../img/mback.jpg");/* Image by freepik.com */
+    background-size: stretch;
+    background-repeat: repeat-y;
   }
 
   .w3-bar .w3-button {
     padding: 16px;
   }
   /* Defaults */
+  .langIcon{
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+  /* Top bar background color */
+  .whitesmoke{
+    background-color: whitesmoke;
+  }
   .glassx {
       background: rgba(233, 234, 239, 0.9);
       border-radius: 16px;
@@ -31,6 +43,7 @@
 
   .glass2 {
   }
+
   .glass-border{
     border:none;
     border-radius: 0;
@@ -51,7 +64,6 @@
       'menu main main main main right'
       'menu footer footer footer footer footer';
     gap: 10px;
-    background-color: white;
     padding: 10px;
     opacity:1;
   }
@@ -123,6 +135,10 @@
     margin-right:10px;
     height:164px;
     margin-top:80px;
+    text-align: center;
+}
+#scrollers > span{
+  text-align: center;
 }
 .w3-panel:not(:first-child):before {
   content: "";
@@ -148,6 +164,11 @@ canvas {
 }
 .ulMobile li{
   padding:8px 4px !important;
+}
+.w3-badge{
+  background:none;
+  color: gray;
+  font-size: 11px;
 }
  /* Mobile overrides */
 @media (max-width: 500px){
