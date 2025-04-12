@@ -21,14 +21,17 @@
 </div>
     <div class="chatbox-messages" id="chatbox-messages"></div>
     <div class="chatbox-input">
-      <input type="text" id="chatbox-input" placeholder="Type a message...">
-      <button onclick="sendMessage()">Send</button>
+      <textarea class="w3-input" placeholder="Upišite poruku.." maxlength="512" id="chatbox-input" ></textarea>
+      <button title="Pošalji" onclick="sendMessage()">&#9993;</button>
     </div>
 </div>
+<div class="w3-logo-container"></div>
+
 <!-- Navbar (sit on top) -->
 <div class="w3-top whitesmoke">
   <div class="w3-bar w3-card glass2 glass-border" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">
+    <a href="#home" class="w3-bar-item w3-button w3-wide w3-bold">
+    <img src="public/img/zglogo.webp" style="height:24px;width:auto;" class="w3-image" alt="">
     ZAGREB SPORT
     <!-- <img src="public/img/logo.png" class="w3-image" alt=""> -->
     </a>
@@ -41,13 +44,13 @@
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+    <a href="javascript:void(0)" class="w3-bar-item w3-link w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
       <i class="fa fa-bars" style="font-size:24px;" ></i>
     </a>
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right" onclick="w3_open()">
+    <a href="javascript:void(0)" class="w3-bar-item w3-link w3-right" onclick="w3_open()">
       <img src="public/img/hr.png" class="langIcon" alt="">
     </a>
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right" onclick="w3_open()">
+    <a href="javascript:void(0)" class="w3-bar-item w3-link w3-right" onclick="w3_open()">
       <img src="public/img/en.png" class="langIcon" alt="">
     </a>
   </div>
@@ -67,7 +70,7 @@
 <div class="" id="scrollers">
   <span>Ne propustite trenutna događanja..</span>
   <div class="w3-grid grid4">
-		<div class="w3-panel w3-indigo w3-margin-top">
+		<div class="w3-panel w3-scrollers w3-margin-top">
 				<header class="w3-container">
           <h6 class="w3-underline">Stolni tenis</h6>
 				</header>
@@ -88,7 +91,7 @@
           </div>
         </footer>
 	  </div>
-    <div class="w3-panel w3-indigo w3-margin-top">
+    <div class="w3-panel w3-scrollers w3-margin-top">
 				<header class="w3-container">
           <h6 class="w3-underline">Plivanje</h6>
 				</header>
@@ -109,7 +112,7 @@
         </div>
         </footer>
 		</div>
-		<div class="w3-panel w3-indigo w3-margin-top mobileHide">
+		<div class="w3-panel w3-scrollers w3-margin-top mobileHide">
 				<header class="w3-container">
           <h6 class="w3-underline">Košarka</h6>
 				</header>
@@ -130,7 +133,7 @@
           </div>
         </footer>
 	  </div>
-    <div class="w3-panel w3-indigo w3-margin-top mobileHide">
+    <div class="w3-panel w3-scrollers w3-margin-top mobileHide">
 				<header class="w3-container">
           <h6 class="w3-underline">Badminton</h6>
 				</header>

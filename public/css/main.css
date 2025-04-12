@@ -126,6 +126,47 @@
     height:164px;
     margin-top:80px;
 }
+#scrollers > span{
+  text-align: center;
+}
+.w3-scrollers {
+    color: rgb(22, 2, 2) !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+/* not used */
+.w3-panelnnnn:not(:first-child):before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%; /* adjust this value to control the height of the border */
+  height: 60%; /* adjust this value to control the height of the border */
+  border-left: 4px solid #f5efef; /* adjust this value to control the border style and color */
+}
+.w3-badge{
+  background:none;
+  color: gray;
+  font-size: 11px;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:6;
+}
+/* karta zg modal*/
+.modalGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+}
+.ulMobile{
+  font-size: 10px;
+}
+.ulMobile li{
+  padding:8px 4px !important;
+}
  /* Mobile overrides */
 @media (max-width: 500px){
     .grid4{
@@ -148,6 +189,9 @@
     }
     #scrollers{
         text-align: center;
+    }
+    .w3-bar .w3-bar-item {
+      padding: 8px 8px;
     }
 }
 @media (min-width: 501px) and (max-width: 1023px){

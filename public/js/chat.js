@@ -19,6 +19,7 @@
 
     const messagesDiv = document.getElementById('chatbox-messages');
     const userMessage = document.createElement('div');
+    userMessage.classList.add('userMessage');
     userMessage.textContent = 'You: ' + message;
     messagesDiv.appendChild(userMessage);
     input.value = '';
