@@ -51,14 +51,6 @@
     background-size:contain;
     background-blend-mode: lighten; */
   }
-
-  .glass3 {
-
-  }
-
-  .glass2 {
-  }
-
   .glass-border{
     border:none;
     border-radius: 0;
@@ -126,9 +118,9 @@
     .w3-backcolor{
         background: dodgerblue;
     }
-  i{
-    cursor: pointer;
-  }
+i {
+  cursor: pointer;
+}
 .w3-panel{
     position:relative;
 }
@@ -196,10 +188,17 @@ canvas {
   color: gray;
   font-size: 11px;
 }
+#objects{
+  padding:28px 16px;
+}
  /* Mobile overrides */
 @media (max-width: 500px){
     .grid4{
         grid-template-columns:1fr 1fr;
+    }
+    .grid4 > .w3-panel{
+        margin-top:8px;
+        margin-bottom:8px;
     }
     .grid3{
         grid-template-columns:1fr ;
@@ -218,6 +217,7 @@ canvas {
     }
     #scrollers{
         text-align: center;
+        margin-top:30px;
     }
     .modalGrid{
       grid-template-columns:1fr;
@@ -225,9 +225,21 @@ canvas {
     .w3-bar .w3-bar-item {
       padding: 8px 8px;
     }
+    .item2 > button {
+      letter-spacing: 1px;
+      max-width: 125px;
+    }
+    #objects{
+      padding:28px 2px;
+    }
 }
 @media (min-width: 501px) and (max-width: 1023px){
-
+  .grid4{
+      grid-template-columns:1fr 1fr 1fr;
+  }
+  .middleHide, .w3-badge{
+    display:none !important;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
 
