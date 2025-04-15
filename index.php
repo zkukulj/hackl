@@ -48,7 +48,9 @@
   ?>
   <!-- Scrollers slideshow-->
   <div class="" id="scrollers">
-    <span>Ne propustite trenutna događanja..</span>
+  <div class="w3-row">
+    Ne propustite trenutna događanja..
+  </div>
     <div class="w3-grid grid4">
       <div class="w3-panel w3-scrollers ">
           <header class="w3-container">
@@ -160,16 +162,16 @@
       </div>
       
       <div class="w3-text-white item3 padd48">
-        <div class="w3-jumbo w3-hide-small">Uživaj u sportu, Zagreb nudi puno</div>
+        <div class="w3-jumbo w3-hide-small imgBackground">Uživaj u sportu, Zagreb nudi puno</div>
         <div class="w3-xxlarge w3-hide-large w3-hide-medium">Uživaj u sportu, Zagreb nudi puno</div>
-        <p class="w3-large w3-hide-small">U zdravom tijelu zdrav duh</p>
+        <p class="w3-large w3-hide-small w3-center">U zdravom tijelu zdrav duh</p>
         <p class="w3-medium">Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.</p>
         <p> Isprobaj pretragu po četvrtima na mapi 
-          <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-tiny w3-wide">Zagrebačke četvrti</a>
+          <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-small w3-wide w3-underline">Zagrebačke četvrti</a>
         </p>
         <p>
           Možeš pretraživati i po objektima ..
-          <a href="#objects" class="w3-bold w3-link w3-btn w3-tiny w3-wide">Sportski Objekti</a>
+          <a href="#objects" class="w3-bold w3-link w3-btn w3-small w3-wide w3-underline">Sportski Objekti</a>
         </p>
         <p>
           <div class="w3-half">
@@ -181,7 +183,7 @@
         </p>
       </div>
       <div class="item4 border-left sponsorBlock w3-hide-small">
-        <h5>Sponzori</h5>
+        <h5>Reklame</h5>
         <div class="container glass2">
           <img src="public/img/sponsor.png" class="sponsorImage" alt="">
           <h6>Sponsor name</h6>
@@ -275,7 +277,7 @@
   </div>
 
   <!-- Modal za kolačiće-->
-  <div id="modalKolacici" class="w3-modal w3-color w3-backcolor w3-animate-zoom">
+  <div id="modalKolacici" class="w3-modal w3-color w3-white w3-animate-zoom">
     <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="this.parentElement.style.display='none'" title="Zatvori">×</span>
     <div class="w3-modal-content w3-center w3-transparent w3-padding-64">
       <p>Izjava o kolačićima</p>
@@ -410,8 +412,21 @@
   <!-- Modal za događanja po objektima-->
   <div id="objektiModal" class="w3-modal w3-animate-zoom w3-white w3-color" >
     <span class="w3-button w3-large w3-black w3-padding-small w3-display-topright" onclick="closeMap(this)" title="Zatvori">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-transparent" style="width: 100%;position:relative;">
-
+    <div class="w3-modal-content w3-animate-zoom w3-transparent w3-center" style="width: 100%;position:relative;">
+      <h3> Sportski događaji u objektu</h3>
+      <h5 id="objectName"></h5>
+      <div class="w3-container imgHolderObjekti">
+        <img id="objectImg" src="" alt="Sportski objekt" class="w3-center w3-round w3-image">
+      </div>
+      <div class="w3-container">
+        <h5>Sportska događanja</h5>
+          <div class="w3-container w3-flex objektFlex">
+            <input type="text" class="w3-input inputs" data-filter-id="objectEvents" onkeyup="filterEvents(this)" placeholder="Pretraži događanja po objektu..">
+          </div>
+      </div>
+      <hr>
+      <div class="w3-container" id="objectEvents">
+      </div>
     </div>
   </div>
 
@@ -513,10 +528,50 @@
     setTimeout(fadeOutText, 3000);
     // END TOP SLIDESHOW TEXT FADE IN OUT
     // ZA SPORTSKE DOGAĐAJE BLOCK BUILDER
-    const buildEventContent = (event) => {
-      
+    const buildEventContent = (ev, buildWhere) => {// buildWhere = id of an element where to build
+      ev.forEach(e => {
+        const eventBlock = document.createElement('div');
+        eventBlock.className = 'w3-panel w3-scrollers w3-leftbar w3-rightbar w3-border-black w3-margin-top';
+        eventBlock.innerHTML = `
+          <header class="w3-container">
+            <h2>${e.eventDate}</h2>
+            <h3>${e.eventNameDesc}</h3>
+          </header>`;
+        document.getElementById(buildWhere).appendChild(eventBlock);
+      });
+    }
+    const filterEvents = (ev) => {
+      const filterWhere = ev.getAttribute("data-filter-id");
+      const eventBlocks = document.getElementById(filterWhere).querySelectorAll(`.w3-panel.w3-scrollers.w3-leftbar.w3-rightbar.w3-border-black.w3-margin-top`);
+      if( ev.value.length > 2 ){
+        const input = ev.value.toLowerCase();
+        eventBlocks.forEach(block => {
+          const eventName = block.querySelector('h3').innerText.toLowerCase();
+          if (eventName.includes(input)) {
+            block.style.display = 'block';
+          } else {
+            block.style.display = 'none';
+          }
+        });
+      } else {
+        eventBlocks.forEach(block => {
+          block.style.display = 'block';
+        });
+      }
     }
 
+    const beforeObjektiModalOpen = (el) => {
+      const imgSrc = el.querySelector('img.property-img').src;
+      const objectLocation = el.querySelector('h3').innerHTML;
+      document.getElementById('objectImg').src = imgSrc;
+      document.getElementById('objectName').innerHTML = objectLocation;
+      const currentMonth = new Date().getMonth() + 1; // get the current month (1-12)
+      const filteredEvents = main_Object.events.filter((event) => {
+        return event.eventMonth === currentMonth.toString().padStart(2, '0') && event.locationTag === 'RSC Jarun';
+      });
+      buildEventContent(filteredEvents, 'objectEvents');
+      document.getElementById('objektiModal').style.display='block';
+    }
     // ASYNC PREUZIMANJE PODATAKA 
     if(typeof(Worker) !== "undefined") {
       if(typeof(w) == "undefined") {
@@ -538,7 +593,7 @@
       if(event.data.rez.length > 0) {
         main_Object.events = event.data.rez;
         event.data.rez.forEach(e => {
-          buildEventContent(e);
+          //buildEventContent(e);
         });
       }
     }

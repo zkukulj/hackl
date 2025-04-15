@@ -29,13 +29,19 @@
     padding: 16px 16px;
   }
   /* Defaults */
-  .langIcon{
+  .w3-top{
+    z-index:4;
+  }
+  .w3-modal{
+    z-index:5;
+  }
+  .langIcon {
     width: 24px;
     height: 24px;
     margin-right: 4px;
   }
   /* Top bar background color */
-  .whitesmoke{
+  .whitesmoke {
     background-color: whitesmoke;
   }
   .glassx {
@@ -77,7 +83,7 @@
   .item2 { grid-area: menu; }
   .item3 { grid-area: main; }
   .item4 { grid-area: right; }
-
+  /* blok za sponzore, reklame */
   .sponsorBlock{
     min-width:144px;
     text-align:center;
@@ -86,8 +92,12 @@
     -webkit-text-stroke-color: darkgray;
     border-bottom: #211f1f solid 1px;
   }
+  /* custom background boje */
   .w3-dodgerblue{
     background-color: rgb(234, 237, 241);
+  }
+  .w3-backcolor{
+    background: dodgerblue;
   }
   .padd48 {
     padding:48px;
@@ -106,18 +116,15 @@
   header>h2{
     text-decoration: underline;
   }
-    .w3-text-white, .w3-hover-text-white:hover {
-        color: #211f1f !important;
-    }
-    .w3-underline{
-        text-decoration: underline;
-    }
-    .w3-color{
-        color: black;
-    }
-    .w3-backcolor{
-        background: dodgerblue;
-    }
+  .w3-text-white, .w3-hover-text-white:hover {
+    color: #211f1f !important;
+  }
+  .w3-underline{
+    text-decoration: underline;
+  }
+  .w3-color{
+    color: black;
+  }
 i {
   cursor: pointer;
 }
@@ -132,16 +139,26 @@ i {
     align-items:center;
 }
 .w3-main-container{
-    padding:16px 16px;
+  padding:16px 16px;
 }
 .content{
-    min-height:45px;
+  min-height:45px;
 }
+.w3-barr > a{
+  padding: 1px 16px;
+}
+.imgBackground {
+  position: relative;
+  min-height: 180px;
+  width: 100%;
+}
+
+/* slideshow sa vrha stranice - trenutna događanja */
 #scrollers{
     margin-left:10px;
     margin-right:10px;
     height:164px;
-    margin-top:80px;
+    margin-top:60px;
     text-align: center;
 }
 #scrollers > span{
@@ -157,15 +174,8 @@ i {
 .w3-scrollers > .w3-container {
   cursor: pointer;
 }
-/* not used */
-.w3-panelnnnn:not(:first-child):before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 20%; /* adjust this value to control the height of the border */
-  height: 60%; /* adjust this value to control the height of the border */
-  border-left: 4px solid #f5efef; /* adjust this value to control the border style and color */
-}
+
+/* canvas za sliku gradskih četvrti*/
 canvas {
   position: absolute;
   top: 0;
@@ -188,8 +198,37 @@ canvas {
   color: gray;
   font-size: 11px;
 }
-#objects{
+/* OBJEKTI MODAL*/
+/* kontejner slike u objekti modalu */
+.imgHolderObjekti {
+  background: linear-gradient(to bottom, #cbc4c4, #f2eaea, #efe9e4);
+  padding:16px;
+}
+.imgHolderObjekti > img {
+  width:700px;
+}
+.imgBackground::before {
+  content: "";
+  position: absolute;
+  top: -100;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/slide11.png");
+  opacity: 0.3; /* adjust the opacity value as needed */
+  z-index:1;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+#objects {
   padding:28px 16px;
+}
+.w3-flex.objektFlex {
+  justify-content: center;
+}
+.w3-flex.objektFlex > .w3-input {
+  max-width:350px;
 }
  /* Mobile overrides */
 @media (max-width: 500px){
@@ -239,6 +278,11 @@ canvas {
   }
   .middleHide, .w3-badge{
     display:none !important;
+  }
+}
+@media (max-width: 742px) {
+  .imgHolderObjekti > img {
+    width:100%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1200px){

@@ -69,5 +69,5 @@ foreach ($ul as $u) {
     }
 }
 $objectsContent .= "</div>";
-$response = [ "status" => 200, "rez" => $allEvents, "objectsContent" => $objectsContent ];
+$response = [ "status" => 200, "rez" => $allEvents ];
 echo json_encode($response);

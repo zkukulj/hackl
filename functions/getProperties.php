@@ -22,6 +22,7 @@ foreach ($ul as $u) {
         foreach ($liElements as $li) {
             // Create a new div element
             $div = $li->ownerDocument->createElement("div");
+            $div->setAttribute("onclick", "beforeObjektiModalOpen(this)");
             // Replace the li element with the div element
             $li->parentNode->replaceChild($div, $li);
             // Move the contents of the li element to the div element
