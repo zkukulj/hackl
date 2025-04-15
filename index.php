@@ -321,8 +321,8 @@
 
       <p>ako u svojem pregledniku omogućite opciju Nemoj me pratiti, Google Analytics poštovat će vaš izbor;
       ako ste omogućili opciju Nemoj me pratiti, neće Vas se pratiti. To predstavlja dodatak isključivanja prikupljanja i analize podataka za izradu statističkih podataka za našu web-stranicu;
-      ako niste omogućili opciju Nemoj me pratiti, ali odlučite isključiti se, kolačić piwik_ignore  bit će pohranjen u Vašem pregledniku. Nijednog posjetitelja s kolačićem piwik_ignore Google Analytics neće pratiti;
-      ako ste na svojem pregledniku onemogućili sve kolačiće, i dalje ćemo prikupljati neke općenite podatke o Vašem pretraživanju (npr. broj posjetitelja na našoj stranici), ali oni će biti manje precizni i Vaši posjeti neće biti praćeni (ne upotrebljavaju se Piwik kolačići)
+      ako niste omogućili opciju Nemoj me pratiti, ali odlučite isključiti se, kolačić SugarStone_ignore  bit će pohranjen u Vašem pregledniku. Nijednog posjetitelja s kolačićem SugarStone_ignore Google Analytics neće pratiti;
+      ako ste na svojem pregledniku onemogućili sve kolačiće, i dalje ćemo prikupljati neke općenite podatke o Vašem pretraživanju (npr. broj posjetitelja na našoj stranici), ali oni će biti manje precizni i Vaši posjeti neće biti praćeni (ne upotrebljavaju se SugarStone kolačići)
       Više o kolačićima možete naći ovdje:
 
       Cookies -  https://www.aboutcookies.org/.</p>
