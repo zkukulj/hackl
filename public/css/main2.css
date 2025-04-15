@@ -65,10 +65,10 @@
     display:none !important;
   }
   .border-left{
-    border-left:1px solid rgb(22, 2, 2);
+    border-left:1px solid #569ff7;
   }
   .border-right{
-    border-right:1px solid rgb(33, 2, 2);
+    border-right:1px solid #569ff7;
   }
   .grid-container {
     display: grid;
@@ -102,10 +102,19 @@
   .padd48 {
     padding:48px;
   }
+  /* padding za small image */
+  .flexPadd {
+    padding-top:22px;
+  }
+  .borderTopBlue{
+    border-top: 1px solid #569ff7;
+  }
   .defaultMargins{
     margin-left: 16px;
     margin-right: 16px;
+    padding:28px 16px;
   }
+  
   .item2 > button{
     letter-spacing: 2px;
   }
@@ -147,12 +156,29 @@ i {
 .w3-barr > a{
   padding: 1px 16px;
 }
+.w3-padding-btn {
+    padding: 8px 24px;
+    border-bottom: #211f1f solid 1px;
+}
+/* back mage small */
 .imgBackground {
   position: relative;
-  min-height: 180px;
   width: 100%;
 }
+.imgBackground::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background-image: url("../img/slide111.png");
+  opacity: 0.4; /* adjust the opacity value as needed */
+  z-index:1;
+  background-repeat: no-repeat;
+  background-size: contain;
 
+}
 /* slideshow sa vrha stranice - trenutna događanja */
 #scrollers{
     margin-left:10px;
@@ -207,19 +233,9 @@ canvas {
 .imgHolderObjekti > img {
   width:700px;
 }
-.imgBackground::before {
-  content: "";
-  position: absolute;
-  top: -100;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../img/slide11.png");
-  opacity: 0.3; /* adjust the opacity value as needed */
-  z-index:1;
-  background-repeat: no-repeat;
-  background-size: contain;
-
+#objectsFrame {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 #objects {
   padding:28px 16px;
@@ -232,6 +248,9 @@ canvas {
 }
  /* Mobile overrides */
 @media (max-width: 500px){
+  h4 {
+    font-size: 14px;
+  }
     .grid4{
         grid-template-columns:1fr 1fr;
     }
@@ -256,7 +275,7 @@ canvas {
     }
     #scrollers{
         text-align: center;
-        margin-top:30px;
+        margin-top:50px;
     }
     .modalGrid{
       grid-template-columns:1fr;
@@ -279,12 +298,41 @@ canvas {
   .middleHide, .w3-badge{
     display:none !important;
   }
-}
-@media (max-width: 742px) {
-  .imgHolderObjekti > img {
+  .imgBackground::before {
+    background-image: url("../img/slide1.png");
+  }
+    .imgHolderObjekti > img {
     width:100%;
+  }
+  .imgBackground::before {
+    top: -60px;
+  }
+}
+@media (max-width: 755px) {
+  .flexPadd {
+    padding-top:2px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
+  .imgBackground::before {
+    top: -60px;
+  }
+  .flexPadd {
+    padding-top:2px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .flexPadd {
+    padding-top:2px;
+  }
+  .imgBackground::before {
+    top: -80px;
+  }
+}
+@media  (min-width: 1500px) {
+  .bigScreen, .borderTopBlue{
+    width:1400px;
+    margin: 0 auto;
+  }
 
 }

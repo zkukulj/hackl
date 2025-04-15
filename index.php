@@ -10,7 +10,7 @@
     exit;
   }
   if (!defined('DOCUMENT_ROOT')) {define('DOCUMENT_ROOT', $_SERVER["DOCUMENT_ROOT"]."/hackaton");}
-  echo DOCUMENT_ROOT;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="public/css/textInOut.css">
   <link rel="stylesheet" href="public/css/main2.css">
   <link rel="stylesheet" href="public/css/objektiGrid.css">
+  <link rel="stylesheet" href="public/css/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="public/css/material_blue.css">
 </head>
 <body class="glass">
   <div class="chatbox-bubble" onclick="open_chat(this)">💬</div>
@@ -48,9 +50,9 @@
   ?>
   <!-- Scrollers slideshow-->
   <div class="" id="scrollers">
-  <div class="w3-row">
-    Ne propustite trenutna događanja..
-  </div>
+    <div class="w3-row">
+      Ne propustite trenutna događanja..
+    </div>
     <div class="w3-grid grid4">
       <div class="w3-panel w3-scrollers ">
           <header class="w3-container">
@@ -140,7 +142,7 @@
   </div>
 
   <!-- About Section Glavni view -->
-  <div class="w3-main-container " id="home">
+  <div class="w3-main-container" id="home">
     <div class="grid-container">
       <div class="item2 border-right">
         <button class="w3-btn w3-block leftBorderAnimate ">Nogomet <span class="w3-badge ">5</span></button>
@@ -162,25 +164,26 @@
       </div>
       
       <div class="w3-text-white item3 padd48">
-        <div class="w3-jumbo w3-hide-small imgBackground">Uživaj u sportu, Zagreb nudi puno</div>
-        <div class="w3-xxlarge w3-hide-large w3-hide-medium">Uživaj u sportu, Zagreb nudi puno</div>
+        <div class="w3-jumbo w3-hide-small imgBackground w3-center w3-bold flexPadd">Uživaj u sportu,</div>
+        <div class="w3-jumbo w3-hide-small w3-center w3-bold">Zagreb nudi puno</div>
+        <div class="w3-xxlarge w3-hide-large w3-hide-medium">Uživaj u sportu,</div>
+        <div class="w3-xxlarge w3-hide-large w3-hide-medium">Zagreb nudi puno</div>
         <p class="w3-large w3-hide-small w3-center">U zdravom tijelu zdrav duh</p>
-        <p class="w3-medium">Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.</p>
-        <p> Isprobaj pretragu po četvrtima na mapi 
-          <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-small w3-wide w3-underline">Zagrebačke četvrti</a>
-        </p>
-        <p>
-          Možeš pretraživati i po objektima ..
-          <a href="#objects" class="w3-bold w3-link w3-btn w3-small w3-wide w3-underline">Sportski Objekti</a>
-        </p>
-        <p>
+        <hr class="borderTopBlue">
+        <h4><span style='font-size:22px;'>&#128073;&#127995;</span>Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.</h4>
+        <h4><span style='font-size:22px;'>&#128073;&#127995;</span> Isprobaj pretragu po četvrtima na mapi 
+          <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-wide w3-underline">Zagrebačke četvrti</a>
+        </h4>
+        <h4>
+          <span style='font-size:22px;'>&#128073;&#127995;</span> Možeš pretraživati i po objektima ..
+          <a href="#objects" class="w3-bold w3-link w3-btn w3-wide w3-underline">Sportski Objekti</a>
+        </h4>
           <div class="w3-half">
             <input class="w3-input inputs" type="text" placeholder="Upiši termin za pretragu..">
           </div>
           <div class="w3-half">
-            <button class="w3-button w3-indigo w3-padding-large w3-small w3-color-black w3-border-0">Pretraži</button>
+            <button class="w3-button w3-white  w3-padding-btn w3-color-black "><i class="fa fa-search"></i> &nbsp;Pretraži</button>
           </div>
-        </p>
       </div>
       <div class="item4 border-left sponsorBlock w3-hide-small">
         <h5>Reklame</h5>
@@ -202,9 +205,9 @@
       
     </div>
   </div>
-
+  <hr class="borderTopBlue">
   <!-- Događanja -->
-  <div class="w3-container glass3 defaultMargins" id="events" style="padding:28px 16px">
+  <div class="w3-container glass3 defaultMargins bigScreen" id="events" >
       <h3 class="w3-center">Trenutna sportska događanja u gradu Zagrebu</h3>
       <hr>
       <!-- Događanje 1 za datum -->
@@ -275,7 +278,7 @@
       </div>
 
   </div>
-
+  <hr class="borderTopBlue">
   <!-- Modal za kolačiće-->
   <div id="modalKolacici" class="w3-modal w3-color w3-white w3-animate-zoom">
     <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="this.parentElement.style.display='none'" title="Zatvori">×</span>
@@ -413,33 +416,42 @@
   <div id="objektiModal" class="w3-modal w3-animate-zoom w3-white w3-color" >
     <span class="w3-button w3-large w3-black w3-padding-small w3-display-topright" onclick="closeMap(this)" title="Zatvori">×</span>
     <div class="w3-modal-content w3-animate-zoom w3-transparent w3-center" style="width: 100%;position:relative;">
-      <h3> Sportski događaji u objektu</h3>
-      <h5 id="objectName"></h5>
-      <div class="w3-container imgHolderObjekti">
-        <img id="objectImg" src="" alt="Sportski objekt" class="w3-center w3-round w3-image">
-      </div>
-      <div class="w3-container">
-        <h5>Sportska događanja</h5>
-          <div class="w3-container w3-flex objektFlex">
-            <input type="text" class="w3-input inputs" data-filter-id="objectEvents" onkeyup="filterEvents(this)" placeholder="Pretraži događanja po objektu..">
-          </div>
-      </div>
-      <hr>
-      <div class="w3-container" id="objectEvents">
+      <div class="w3-container w3-center" id="objectsFrame">
+        <h3> Sportski događaji u objektu</h3>
+        <h5 id="objectName"></h5>
+        <div class="w3-container imgHolderObjekti">
+          <img id="objectImg" src="" alt="Sportski objekt" class="w3-center w3-round w3-image">
+        </div>
+        <div class="w3-container">
+            <h4>Sportska događanja</h4>
+            <div class="w3-container w3-flex objektFlex">
+              <input type="text" class="w3-input inputs" data-filter-id="objectEvents" onkeyup="filterEvents(this)" placeholder="Filtriraj događanja za ovaj objekt..">
+            </div>
+            <hr>
+            <div class="w3-container w3-flex objektFlex">
+              <h5>Filtriraj po datumima:</h5>
+            </div>
+            <div class="w3-container w3-flex objektFlex">
+              <input class="w3-input bookSelect" type="text" id="datePicker" placeholder="Odaberi datum od - do">
+            </div>
+        </div>
+        <hr>
+        <div class="w3-container" id="objectEvents">
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Objekti-->
-  <div class="w3-container glass3" id="objects">
+  <div class="w3-container glass3 bigScreen" id="objects">
     <hr>
     <h3 class="w3-center">SPORTSKI OBJEKTI</h3>
     <div id="objektiHolder" style="margin-top:48px" class="glass3">
     </div>
   </div>
-
-  <!-- Contact Section trenutno skrivnemo-->
-  <div class="w3-container glass3" style="padding:28px 16px" id="contact">
+  <hr class="borderTopBlue">
+  <!-- Contact Section -->
+  <div class="w3-container glass3 bigScreen" style="padding:28px 16px" id="contact">
     <hr>
     <h3 class="w3-center">KONTAKT</h3>
     <p class="w3-center w3-large">Kontaktirajte nas, odgovoriti ćemo najbrže što možemo!</p>
@@ -457,9 +469,9 @@
       </form>
     </div>
   </div>
-  <hr>
+  <hr class="borderTopBlue">
   <!-- Footer -->
-  <footer class="w3-center w3-padding-64 glass3 defaultMargins">
+  <footer class="w3-center w3-padding-64 glass3 defaultMargins bigScreen">
     <a href="#home" class="w3-button w3-indigo"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <hr>
     <div class="w3-grid grid3">
@@ -481,7 +493,7 @@
 
     </div>
   </footer>
- 
+ <script src="public/js/flatpickr.js"></script>
   <script>
   // Tu ćemo spremiti sve evente
     var main_Object = {
@@ -522,7 +534,33 @@
     // setTimeout(fadeOutText, 3000);
 
     // END TOP SLIDESHOW TEXT FADE IN OUT
+    // SELEKTOR ZA DATUME
+    const getEventsByDate = () => {
 
+    }
+    async function initFlatpickr() {
+      let disabledDates = await getEventsByDate();
+      const screenWidth = window.innerWidth;
+      const showMonths = screenWidth < 641 ? 1 : 2;
+      flatpickr("#datePicker", {
+        mode: "range",
+        showMonths: showMonths,
+        minDate: "today",
+        altInput: true,
+        altFormat: "j. F, Y",
+        dateFormat: "Y-m-d",
+        onChange: function(selectedDates, dateStr, instance) {
+        if (selectedDates.length === 2) {
+          const bookingData = {
+            dateRange: dateStr
+          };
+          console.log(bookingData)
+        }
+      },
+      });
+    }
+    
+    // END SELEKTORA ZA DATUME
     // ZA SPORTSKE DOGAĐAJE BLOCK BUILDER
     const buildEventContent = (ev, buildWhere) => {// buildWhere = id of an element where to build
       ev.forEach(e => {
@@ -532,7 +570,14 @@
           <header class="w3-container">
             <h2>${e.eventDate}</h2>
             <h3>${e.eventNameDesc}</h3>
-          </header>`;
+          <div class="w3-right">
+              <i class="fa fa-facebook-official w3-hover-opacity"></i>
+              <i class="fa fa-instagram w3-hover-opacity"></i>
+              <i class="fa fa-snapchat w3-hover-opacity"></i>
+              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+              <i class="fa fa-twitter w3-hover-opacity"></i>
+              <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div></header>`;
         document.getElementById(buildWhere).appendChild(eventBlock);
       });
     }
@@ -568,6 +613,7 @@
       });
       buildEventContent(filteredEvents, 'objectEvents');
       document.getElementById('objektiModal').style.display='block';
+      initFlatpickr();
     }
     // ASYNC PREUZIMANJE PODATAKA SCRAPING
     if(typeof(Worker) !== "undefined") {
