@@ -487,13 +487,6 @@
     var main_Object = {
       events: []
     };
-    // Modal Image Gallery N/A
-    const onClick = (element) => {
-      document.getElementById("img01").src = element.src;
-      document.getElementById("modal01").style.display = "block";
-      let captionText = document.getElementById("caption");
-      captionText.innerHTML = element.alt;
-    }
 
     // ZA sidebar koji se nalazi u content/header/
     let mySidebar = document.getElementById("mySidebar");
@@ -510,6 +503,7 @@
         mySidebar.style.display = "none";
     }
     // END SIDEBAR
+
     // TOP SLIDESHOW TEXT FADE IN OUT
     const fadeOutText = () => {
       const textElements = document.querySelectorAll('.fade-text');
@@ -525,8 +519,10 @@
       });
     }
     // Trigger fade-out teksta after 3 seconds
-    setTimeout(fadeOutText, 3000);
+    // setTimeout(fadeOutText, 3000);
+
     // END TOP SLIDESHOW TEXT FADE IN OUT
+
     // ZA SPORTSKE DOGAĐAJE BLOCK BUILDER
     const buildEventContent = (ev, buildWhere) => {// buildWhere = id of an element where to build
       ev.forEach(e => {
@@ -540,6 +536,7 @@
         document.getElementById(buildWhere).appendChild(eventBlock);
       });
     }
+    // FILTRIRANJA EVENATA
     const filterEvents = (ev) => {
       const filterWhere = ev.getAttribute("data-filter-id");
       const eventBlocks = document.getElementById(filterWhere).querySelectorAll(`.w3-panel.w3-scrollers.w3-leftbar.w3-rightbar.w3-border-black.w3-margin-top`);
@@ -559,7 +556,7 @@
         });
       }
     }
-
+    // NAKON KLIKA NA OBJEKT KREIRANJE SADRŽAJA MODALA OBJEKTI
     const beforeObjektiModalOpen = (el) => {
       const imgSrc = el.querySelector('img.property-img').src;
       const objectLocation = el.querySelector('h3').innerHTML;
@@ -572,7 +569,7 @@
       buildEventContent(filteredEvents, 'objectEvents');
       document.getElementById('objektiModal').style.display='block';
     }
-    // ASYNC PREUZIMANJE PODATAKA 
+    // ASYNC PREUZIMANJE PODATAKA SCRAPING
     if(typeof(Worker) !== "undefined") {
       if(typeof(w) == "undefined") {
         w  = new Worker("public/js/getEvents.js");
