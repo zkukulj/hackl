@@ -21,11 +21,11 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="public/css/main2.css">
   <link rel="stylesheet" href="public/css/scrollbar.css">
   <link rel="stylesheet" href="public/css/chat.css">
   <link rel="stylesheet" href="public/css/leftBorderAnimate.css">
   <link rel="stylesheet" href="public/css/topEventsSlideshow.css">
-  <link rel="stylesheet" href="public/css/main2.css">
   <link rel="stylesheet" href="public/css/objektiGrid.css">
   <link rel="stylesheet" href="public/css/flatpickr.min.css">
   <link rel="stylesheet" type="text/css" href="public/css/material_blue.css">
@@ -450,6 +450,7 @@
     </div>
   </div>
   <hr class="borderTopBlue">
+
   <!-- Contact Section -->
   <div class="w3-container glass3 bigScreen" style="padding:28px 16px" id="contact">
     <hr>
@@ -470,6 +471,7 @@
     </div>
   </div>
   <hr class="borderTopBlue">
+
   <!-- Footer -->
   <footer class="w3-center w3-padding-64 glass3 defaultMargins bigScreen">
     <a href="#home" class="w3-button w3-indigo"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
@@ -493,6 +495,7 @@
 
     </div>
   </footer>
+
  <script src="public/js/flatpickr.js"></script>
  <script src="public/js/topEventsSlideshow.js"></script>
   <script>
@@ -535,7 +538,7 @@
     // setTimeout(fadeOutText, 3000);
 
     // END TOP SLIDESHOW TEXT FADE IN OUT
-    // SELEKTOR ZA DATUME
+    // SELEKTOR ZA DATUME NA MODALU OBJEKTI
     const getEventsByDate = () => {
 
     }
@@ -617,7 +620,7 @@
       initFlatpickr();
     }
 
-    // ASYNC PREUZIMANJE PODATAKA SCRAPING
+    // ASYNC PREUZIMANJE PODATAKA SCRAPING WEBWORKERI
     if(typeof(Worker) !== "undefined") {
       if(typeof(w) == "undefined") {
         w  = new Worker("public/js/getEvents.js");
