@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="public/css/scrollbar.css">
   <link rel="stylesheet" href="public/css/chat.css">
   <link rel="stylesheet" href="public/css/leftBorderAnimate.css">
-  <link rel="stylesheet" href="public/css/textInOut.css">
+  <link rel="stylesheet" href="public/css/topEventsSlideshow.css">
   <link rel="stylesheet" href="public/css/main2.css">
   <link rel="stylesheet" href="public/css/objektiGrid.css">
   <link rel="stylesheet" href="public/css/flatpickr.min.css">
@@ -33,18 +33,16 @@
 <body class="glass">
   <div class="chatbox-bubble" onclick="open_chat(this)">💬</div>
   <div class="chatbox w3-animate-right">
-  <div class="chatbox-toolbar">
-      <div class="chatbox-title">Trebate pomoć? Pitajte nas..</div>
-      <div class="chatbox-close" onclick="close_chat(this)">✖</div>
-  </div>
+    <div class="chatbox-toolbar">
+        <div class="chatbox-title">Trebate pomoć? Pitajte nas..</div>
+        <div class="chatbox-close" onclick="close_chat(this)">✖</div>
+    </div>
       <div class="chatbox-messages" id="chatbox-messages"></div>
       <div class="chatbox-input">
         <textarea class="w3-input" placeholder="Upišite poruku.." maxlength="512" id="chatbox-input" ></textarea>
         <button title="Pošalji" onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
       </div>
   </div>
-  <!-- <div class="w3-logo-container"></div> -->
-
   <?php
     require 'content/header.php';
   ?>
@@ -54,18 +52,18 @@
       Ne propustite trenutna događanja..
     </div>
     <div class="w3-grid grid4">
-      <div class="w3-panel w3-scrollers ">
+      <div class="w3-panel w3-scrollers topScrollers">
           <header class="w3-container">
-            <h6 class="w3-underline fade-text">Stolni tenis</h6>
+            <h6 class="w3-underline fade-text scrollPlace"></h6>
           </header>
           <div class="content">
-            <span class="fade-text">Stolnoteniski turnir za rekreativce</span>
+            <span class="fade-text scrollEvent"></span>
           </div>
           <footer>
             <div class="w3-left">
-              <span class="fade-text">01.03.2025</span>
+              <span class="fade-text scrollDate"></span>
             </div>
-            <div class="w3-right">
+            <div class="w3-right fade-text">
               <i class="fa fa-facebook-official w3-hover-opacity"></i>
               <i class="fa fa-instagram w3-hover-opacity"></i>
               <i class="fa fa-snapchat w3-hover-opacity"></i>
@@ -75,18 +73,18 @@
             </div>
           </footer>
       </div>
-      <div class="w3-panel w3-scrollers ">
+      <div class="w3-panel w3-scrollers topScrollers">
           <header class="w3-container">
-            <h6 class="w3-underline fade-text">Plivanje</h6>
+            <h6 class="w3-underline fade-text scrollPlace"></h6>
           </header>
           <div class="content">
-            <span class="fade-text">Upis u školu plivanja na bazenu Mladost</span>
+            <span class="fade-text scrollEvent"></span>
           </div>
           <footer>
             <div class="w3-left">
-              <span class="fade-text">01.03.2025</span>
+              <span class="fade-text scrollDate"></span>
             </div>
-            <div class="w3-right">
+            <div class="w3-right fade-text">
               <i class="fa fa-facebook-official w3-hover-opacity"></i>
               <i class="fa fa-instagram w3-hover-opacity"></i>
               <i class="fa fa-snapchat w3-hover-opacity"></i>
@@ -96,18 +94,18 @@
           </div>
           </footer>
       </div>
-      <div class="w3-panel w3-scrollers mobileHide">
+      <div class="w3-panel w3-scrollers topScrollers mobileHide">
           <header class="w3-container">
-            <h6 class="w3-underline fade-text">Košarka</h6>
+            <h6 class="w3-underline fade-text scrollPlace"></h6>
           </header>
           <div class="content">
-            <span class="fade-text">3 x 3 hakl turnir za rekreativce</span>
+            <span class="fade-text scrollEvent"></span>
           </div>
           <footer>
             <div class="w3-left">
-              <span class="fade-text">01.03.2025</span>
+              <span class="fade-text scrollDate"></span>
             </div>
-            <div class="w3-right">
+            <div class="w3-right fade-text">
                 <i class="fa fa-facebook-official w3-hover-opacity"></i>
                 <i class="fa fa-instagram w3-hover-opacity"></i>
                 <i class="fa fa-snapchat w3-hover-opacity"></i>
@@ -117,18 +115,18 @@
             </div>
           </footer>
       </div>
-      <div class="w3-panel w3-scrollers mobileHide middleHide">
+      <div class="w3-panel w3-scrollers topScrollers mobileHide middleHide">
           <header class="w3-container">
-            <h6 class="w3-underline fade-text">Badminton</h6>
+            <h6 class="w3-underline fade-text scrollPlace"></h6>
           </header>
           <div class="content">
-            <span class="fade-text">Badminton treninzi na velesajmu</span>
+            <span class="fade-text scrollEvent"></span>
           </div>
           <footer>
             <div class="w3-left">
-              <span class="fade-text">01.03.2025</span>
+              <span class="fade-text scrollDate"></span>
             </div>
-            <div class="w3-right">
+            <div class="w3-right fade-text">
                 <i class="fa fa-facebook-official w3-hover-opacity"></i>
                 <i class="fa fa-instagram w3-hover-opacity"></i>
                 <i class="fa fa-snapchat w3-hover-opacity"></i>
@@ -206,6 +204,7 @@
     </div>
   </div>
   <hr class="borderTopBlue">
+
   <!-- Događanja -->
   <div class="w3-container glass3 defaultMargins bigScreen" id="events" >
       <h3 class="w3-center">Trenutna sportska događanja u gradu Zagrebu</h3>
@@ -279,6 +278,7 @@
 
   </div>
   <hr class="borderTopBlue">
+
   <!-- Modal za kolačiće-->
   <div id="modalKolacici" class="w3-modal w3-color w3-white w3-animate-zoom">
     <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" onclick="this.parentElement.style.display='none'" title="Zatvori">×</span>
@@ -494,8 +494,9 @@
     </div>
   </footer>
  <script src="public/js/flatpickr.js"></script>
+ <script src="public/js/topEventsSlideshow.js"></script>
   <script>
-  // Tu ćemo spremiti sve evente
+    // Tu ćemo spremiti sve evente
     var main_Object = {
       events: []
     };
@@ -520,14 +521,14 @@
     const fadeOutText = () => {
       const textElements = document.querySelectorAll('.fade-text');
       textElements.forEach(element => {
-        element.classList.add('fade-out-text');
+        element.classList.add('fade-out');
       });
-      //fadeInText();
     }
     const fadeInText = () => {
       const textElements = document.querySelectorAll('.fade-text');
       textElements.forEach(element => {
-        element.classList.remove('fade-out-text');
+        element.classList.remove('fade-out');
+        element.classList.add('fade-in');
       });
     }
     // Trigger fade-out teksta after 3 seconds
@@ -609,12 +610,13 @@
       document.getElementById('objectName').innerHTML = objectLocation;
       const currentMonth = new Date().getMonth() + 1; // get the current month (1-12)
       const filteredEvents = main_Object.events.filter((event) => {
-        return event.eventMonth === currentMonth.toString().padStart(2, '0') && event.locationTag === 'RSC Jarun';
+        return event.eventMonth === currentMonth.toString().padStart(2, '0') && event.locationTag === 'RSC Jarun';;
       });
       buildEventContent(filteredEvents, 'objectEvents');
       document.getElementById('objektiModal').style.display='block';
       initFlatpickr();
     }
+
     // ASYNC PREUZIMANJE PODATAKA SCRAPING
     if(typeof(Worker) !== "undefined") {
       if(typeof(w) == "undefined") {
@@ -635,9 +637,11 @@
     w.onmessage = function(event) {
       if(event.data.rez.length > 0) {
         main_Object.events = event.data.rez;
-        event.data.rez.forEach(e => {
-          //buildEventContent(e);
+        const currentMonth = new Date().getMonth() + 1; // get the current month (1-12)
+        const filteredEvents = main_Object.events.filter((event) => {
+          return event.eventMonth === currentMonth.toString().padStart(2, '0');
         });
+        loopScrollers(filteredEvents);
       }
     }
     // END ASYNC PREUZIMANJE PODATAKA

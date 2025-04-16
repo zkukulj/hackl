@@ -184,7 +184,7 @@ i {
     margin-left:10px;
     margin-right:10px;
     height:164px;
-    margin-top:60px;
+    margin-top:70px;
     text-align: center;
 }
 #scrollers > span{
@@ -200,7 +200,9 @@ i {
 .w3-scrollers > .w3-container {
   cursor: pointer;
 }
-
+.topScrollers {
+  min-height:112px;
+}
 /* canvas za sliku gradskih četvrti*/
 canvas {
   position: absolute;
@@ -334,5 +336,7 @@ canvas {
     width:1400px;
     margin: 0 auto;
   }
-
+  .w3-jumbo{
+    letter-spacing: 12px;
+  }
 }
