@@ -40,8 +40,8 @@
   background-color: #0056b3;
 }
 .chatbox-bubble {
-  width: 48px;
-  height: 48px;
+  width: 59px;
+  height: 59px;
   background-color: #17384c;
   border: solid 2px #fff;
   color: #fff;
@@ -77,4 +77,10 @@
 }
 .userMessage{
 /* Stilovi razdvajanja poruka */
+}
+@media screen and (max-width: 47em) {
+  .chatbox-bubble {
+    width: 48px;
+    height: 48px;
+  }
 }
