@@ -173,7 +173,7 @@
           <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-wide w3-underline">Zagrebačke četvrti</a>
         </h4>
         <h4>
-          <span style='font-size:22px;'>&#128073;&#127995;</span> Možeš pretraživati i po objektima ..
+          <span style='font-size:22px;'>&#128073;&#127995;</span> Možeš pretraživati i po sportskim objektima
           <a href="#objects" class="w3-bold w3-link w3-btn w3-wide w3-underline">Sportski Objekti</a>
         </h4>
           <div class="w3-half">
@@ -208,73 +208,8 @@
   <!-- Događanja -->
   <div class="w3-container glass3 defaultMargins bigScreen" id="events" >
       <h3 class="w3-center">Trenutna sportska događanja u gradu Zagrebu</h3>
-      <hr>
-      <!-- Događanje 1 za datum -->
-      <h2 class="w3-center w3-color" >01.05.2025</h2>
+      <!-- Događanja za mjesec -->
 
-      <div class="w3-container" style="padding:28px 16px">
-        <div class="w3-panel w3-scrollers w3-leftbar w3-rightbar w3-border-black w3-margin-top">
-          <header class="w3-container">
-          <h2>Stolni tenis</h2>
-            <h3>Stolnoteniski turnir za rekreativce i sve stolnoteniske entuzijaste</h3>
-          </header>
-          <div class="w3-container">
-            <p>Poštovani igrači, 
-              pozivamo vas na idući STCZ turnir u nedjelju, 01.05.2025. s početkom od 18 sati. 
-              (Velesajam, paviljon 6, prvi kat)...
-            </p>
-          </div>
-        </div>
-      </div>
-        <!-- Događanje 2 za datum -->
-      <div class="w3-container" style="padding:28px 16px">
-        <div class="w3-panel w3-scrollers w3-leftbar w3-rightbar w3-border-black w3-margin-top">
-          <header class="w3-container">
-          <h2>Plivanje</h2>
-            <h3>Upis u školu plivanja na bazenu Mladost</h3>
-          </header>
-          <div class="w3-container">
-            <p>Poštovani plivači, 
-              pozivamo vas da se upišete u školu plivanja 01.05.2025. od 18 do 21 sat. 
-              u prostorijama Plivačkog kluba Mladost...
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-      <!-- Događanje 1 za datum -->
-      <h2 class="w3-center w3-color" >03.05.2025</h2>
-
-      <div class="w3-container" style="padding:28px 16px">
-        <div class="w3-panel w3-scrollers w3-leftbar w3-rightbar w3-border-black w3-margin-top">
-          <header class="w3-container">
-          <h2>Stolni tenis</h2>
-            <h3>Stolnoteniski turnir za rekreativce i sve stolnoteniske entuzijaste</h3>
-          </header>
-          <div class="w3-container">
-            <p>Poštovani igrači, 
-              pozivamo vas na idući STCZ turnir u nedjelju, 01.05.2025. s početkom od 18 sati. 
-              (Velesajam, paviljon 6, prvi kat)...
-            </p>
-          </div>
-        </div>
-      </div>
-        <!-- Događanje 2 za datum -->
-      <div class="w3-container" style="padding:28px 16px">
-        <div class="w3-panel w3-scrollers w3-leftbar w3-rightbar w3-border-black w3-margin-top">
-          <header class="w3-container">
-            <h2>Plivanje</h2>
-            <h3>Upis u školu plivanja na bazenu Mladost</h3>
-          </header>
-          <div class="w3-container">
-            <p>Poštovani plivači, 
-              pozivamo vas da se upišete u školu plivanja 01.05.2025. od 18 do 21 sat. 
-              u prostorijama Plivačkog kluba Mladost...
-            </p>
-          </div>
-        </div>
-      </div>
 
   </div>
   <hr class="borderTopBlue">
@@ -645,6 +580,7 @@
           return event.eventMonth === currentMonth.toString().padStart(2, '0');
         });
         loopScrollers(filteredEvents);
+        buildEventContent(filteredEvents, 'events');
       }
     }
     // END ASYNC PREUZIMANJE PODATAKA
