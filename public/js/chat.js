@@ -16,7 +16,11 @@
     const input = document.getElementById('chatbox-input');
     const message = input.value;
     if (message.trim() === '') return;
-
+    //const context = main_Object.events;
+    const currentMonth = new Date().getMonth() + 1; // get the current month (1-12)
+      const filteredEvents = main_Object.events.filter((event) => {
+        return event.eventMonth === currentMonth.toString().padStart(2, '0') && event.locationTag === 'RSC Jarun';;
+      });
     const messagesDiv = document.getElementById('chatbox-messages');
     const userMessage = document.createElement('div');
     userMessage.classList.add('userMessage');
@@ -28,7 +32,10 @@
       headers: {
         'Content-Type': 'application/json'
       },
-        body: JSON.stringify({ message })
+        body: JSON.stringify({
+        message: message,
+        context: filteredEvents
+      })
     })
     .then(response => response.json())
     .then(data => {

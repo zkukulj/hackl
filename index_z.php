@@ -49,10 +49,13 @@
   <!-- About Section Glavni view -->
   <div class="w3-main-container" id="home">
     <div class="glassx">
-        <div class="grid-container">     
-            <div class="w3-text-white item3 padd48 glassx2">
-                <div class="w3-jumbo w3-hide-small imgBackground w3-center w3-bold flexPadd">Uživaj u sportu,</div>
-                <div class="w3-jumbo w3-hide-small w3-center w3-bold">Zagreb nudi puno</div>
+        <div class="grid-container glassx2">
+          <div class=" item3 padd48">
+            <img src="public/img/szg121.png" alt="">
+          </div>
+            <div class=" item3 padd48">
+                <div class="w3-jumbo w3-hide-small imgBackground w3-center w3-bold flexPadd hidden">Uživaj u sportu,</div>
+                <div class="w3-jumbo w3-hide-small w3-center w3-bold hidden">Zagreb nudi puno</div>
                 <div class="w3-xxlarge w3-hide-large w3-hide-medium w3-center">Uživaj u sportu,</div>
                 <div class="w3-xxlarge w3-hide-large w3-hide-medium w3-center">Zagreb nudi puno</div>
                 <p class="w3-xlarge w3-hide-small w3-center">U zdravom tijelu zdrav duh</p>

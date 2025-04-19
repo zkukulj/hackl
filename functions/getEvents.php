@@ -1,4 +1,5 @@
 <?php
+session_start();
 $url = "https://www.sportskiobjekti.hr/kalendar-dogadjanja/40";
 
 // Get the HTML content of the webpage
@@ -70,4 +71,5 @@ foreach ($ul as $u) {
 }
 $objectsContent .= "</div>";
 $response = [ "status" => 200, "rez" => $allEvents ];
+$_SESSION['allEvents'] = $allEvents;
 echo json_encode($response);
