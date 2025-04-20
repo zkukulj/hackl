@@ -69,9 +69,9 @@
     background-repeat: repeat-x repeat-y;
     background-size: contain;
     min-height:90vh;
-    margin-top:60px;
     position:relative;
   }
+  #events{}
 .glassx {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -258,8 +258,14 @@ canvas {
 }
  /* Mobile overrides */
 @media (max-width: 500px){
-    .grid-container{
+  #events{
+    margin-top:350px;
+  }
+  .grid-container{
     grid-template-columns:1fr ;
+  }
+  .logoImg{
+    width: 100%;
   }
   h4 {
     font-size: 14px;
@@ -341,10 +347,15 @@ canvas {
   }
 }
 @media  (min-width: 1500px) {
-    .grid-container{
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+  .grid-container{
+    max-width: 98%;
+    margin: 0 auto;
+    align-items: center;
+    height:98vh;
+  }
+  .item3{
+    min-height: 700px;
+  }
   .bigScreen, .borderTopBlue{
     width:1400px;
     margin: 0 auto;

@@ -50,15 +50,15 @@
   <div class="w3-main-container" id="home">
     <div class="glassx">
         <div class="grid-container glassx2">
-          <div class=" item3 padd48">
-            <img src="public/img/szg121.png" alt="">
+          <div class="item3 padd48 logoHolder glassx2 w3-center mainFrame1">
+            <img class="logoImg" src="public/img/szg121.png" alt="">
           </div>
-            <div class=" item3 padd48">
-                <div class="w3-jumbo w3-hide-small imgBackground w3-center w3-bold flexPadd hidden">Uživaj u sportu,</div>
+            <div class=" item3 padd48 glassx2 mainFrame2">
+                <div class="w3-jumbo w3-hide-small imgBackground w3-center w3-bold flexPadd ">Uživaj u sportu</div>
                 <div class="w3-jumbo w3-hide-small w3-center w3-bold hidden">Zagreb nudi puno</div>
                 <div class="w3-xxlarge w3-hide-large w3-hide-medium w3-center">Uživaj u sportu,</div>
                 <div class="w3-xxlarge w3-hide-large w3-hide-medium w3-center">Zagreb nudi puno</div>
-                <p class="w3-xlarge w3-hide-small w3-center">U zdravom tijelu zdrav duh</p>
+                <h3 class="w3-xlarge w3-hide-small w3-center">U zdravom tijelu zdrav duh</h3>
                 <br>
                 <div class="w3-large w3-center">
                     <input class="w3-input inputs" type="text" placeholder="Pretraži sportska događanja..">
@@ -80,7 +80,6 @@
         </div>
     </div>
   </div>
-  <hr class="borderTopBlue">
 
   <!-- Događanja -->
   <div class="w3-container glass3 defaultMargins bigScreen" id="events" >
