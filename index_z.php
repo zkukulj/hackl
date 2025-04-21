@@ -46,161 +46,38 @@
   <?php
     require 'content/header.php';
   ?>
-  <!-- Scrollers slideshow-->
-  <div class="" id="scrollers">
-    <div class="w3-row">
-      Ne propustite trenutna događanja..
-    </div>
-    <div class="w3-grid grid4">
-      <div class="w3-panel w3-scrollers topScrollers">
-          <header class="w3-container">
-            <h6 class="w3-underline fade-text scrollPlace"></h6>
-          </header>
-          <div class="content">
-            <span class="fade-text scrollEvent"></span>
-          </div>
-          <footer>
-            <div class="w3-left">
-              <span class="fade-text scrollDate"></span>
-            </div>
-            <div class="w3-right fade-text">
-              <i class="fa fa-facebook-official w3-hover-opacity"></i>
-              <i class="fa fa-instagram w3-hover-opacity"></i>
-              <i class="fa fa-snapchat w3-hover-opacity"></i>
-              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-              <i class="fa fa-twitter w3-hover-opacity"></i>
-              <i class="fa fa-linkedin w3-hover-opacity"></i>
-            </div>
-          </footer>
-      </div>
-      <div class="w3-panel w3-scrollers topScrollers">
-          <header class="w3-container">
-            <h6 class="w3-underline fade-text scrollPlace"></h6>
-          </header>
-          <div class="content">
-            <span class="fade-text scrollEvent"></span>
-          </div>
-          <footer>
-            <div class="w3-left">
-              <span class="fade-text scrollDate"></span>
-            </div>
-            <div class="w3-right fade-text">
-              <i class="fa fa-facebook-official w3-hover-opacity"></i>
-              <i class="fa fa-instagram w3-hover-opacity"></i>
-              <i class="fa fa-snapchat w3-hover-opacity"></i>
-              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-              <i class="fa fa-twitter w3-hover-opacity"></i>
-              <i class="fa fa-linkedin w3-hover-opacity"></i>
-          </div>
-          </footer>
-      </div>
-      <div class="w3-panel w3-scrollers topScrollers mobileHide">
-          <header class="w3-container">
-            <h6 class="w3-underline fade-text scrollPlace"></h6>
-          </header>
-          <div class="content">
-            <span class="fade-text scrollEvent"></span>
-          </div>
-          <footer>
-            <div class="w3-left">
-              <span class="fade-text scrollDate"></span>
-            </div>
-            <div class="w3-right fade-text">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
-                <i class="fa fa-instagram w3-hover-opacity"></i>
-                <i class="fa fa-snapchat w3-hover-opacity"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-                <i class="fa fa-twitter w3-hover-opacity"></i>
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
-            </div>
-          </footer>
-      </div>
-      <div class="w3-panel w3-scrollers topScrollers mobileHide middleHide">
-          <header class="w3-container">
-            <h6 class="w3-underline fade-text scrollPlace"></h6>
-          </header>
-          <div class="content">
-            <span class="fade-text scrollEvent"></span>
-          </div>
-          <footer>
-            <div class="w3-left">
-              <span class="fade-text scrollDate"></span>
-            </div>
-            <div class="w3-right fade-text">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
-                <i class="fa fa-instagram w3-hover-opacity"></i>
-                <i class="fa fa-snapchat w3-hover-opacity"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-                <i class="fa fa-twitter w3-hover-opacity"></i>
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
-            </div>
-          </footer>
-      </div>
-    </div>
-  </div>
-
   <!-- About Section Glavni view -->
   <div class="w3-main-container" id="home">
-    <div class="grid-container">
-      <div class="item2 border-right">
-        <button class="w3-btn w3-block leftBorderAnimate ">Nogomet <span class="w3-badge ">5</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate ">Košarka <span class="w3-badge">2</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate ">Rukomet <span class="w3-badge">2</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Stolni tenis <span class="w3-badge">3</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Tenis <span class="w3-badge">5</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Badminton <span class="w3-badge">1</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Odbojka <span class="w3-badge">2</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Padel <span class="w3-badge">2</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Hokej <span class="w3-badge">1</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Atletika <span class="w3-badge">7</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Plivanje <span class="w3-badge">5</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Vaterpolo <span class="w3-badge">5</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Veslanje <span class="w3-badge">5</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Ragbi <span class="w3-badge">5</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Streličarstvo <span class="w3-badge">5</span></button>
-        <button class="w3-btn w3-block leftBorderAnimate">Šah <span class="w3-badge">5</span></button>
-      </div>
-      
-      <div class="w3-text-white item3 padd48">
-        <div class="w3-jumbo w3-hide-small imgBackground w3-center w3-bold flexPadd">Uživaj u sportu,</div>
-        <div class="w3-jumbo w3-hide-small w3-center w3-bold">Zagreb nudi puno</div>
-        <div class="w3-xxlarge w3-hide-large w3-hide-medium">Uživaj u sportu,</div>
-        <div class="w3-xxlarge w3-hide-large w3-hide-medium">Zagreb nudi puno</div>
-        <p class="w3-large w3-hide-small w3-center">U zdravom tijelu zdrav duh</p>
-        <hr class="borderTopBlue">
-        <h4><span style='font-size:22px;'>&#128073;&#127995;</span>Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.</h4>
-        <h4><span style='font-size:22px;'>&#128073;&#127995;</span> Isprobaj pretragu po četvrtima na mapi 
-          <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-wide w3-underline">Zagrebačke četvrti</a>
-        </h4>
-        <h4>
-          <span style='font-size:22px;'>&#128073;&#127995;</span> Možeš pretraživati i po sportskim objektima
-          <a href="#objects" class="w3-bold w3-link w3-btn w3-wide w3-underline">Sportski objekti</a>
-        </h4>
-          <div class="w3-half">
-            <input class="w3-input inputs" type="text" placeholder="Upiši termin za pretragu..">
+    <div class="glassx">
+        <div class="grid-container glassx2">
+          <div class=" item3 padd48">
+            <img src="public/img/szg121.png" alt="">
           </div>
-          <div class="w3-half">
-            <button class="w3-button w3-white  w3-padding-btn w3-color-black "><i class="fa fa-search"></i> &nbsp;Pretraži</button>
-          </div>
-      </div>
-      <div class="item4 border-left sponsorBlock w3-hide-small">
-        <h5>Reklame</h5>
-        <div class="container glass2">
-          <img src="public/img/sponsor.png" class="sponsorImage" alt="">
-          <h6>Sponsor name</h6>
+            <div class=" item3 padd48">
+                <div class="w3-jumbo w3-hide-small imgBackground w3-center w3-bold flexPadd hidden">Uživaj u sportu,</div>
+                <div class="w3-jumbo w3-hide-small w3-center w3-bold hidden">Zagreb nudi puno</div>
+                <div class="w3-xxlarge w3-hide-large w3-hide-medium w3-center">Uživaj u sportu,</div>
+                <div class="w3-xxlarge w3-hide-large w3-hide-medium w3-center">Zagreb nudi puno</div>
+                <p class="w3-xlarge w3-hide-small w3-center">U zdravom tijelu zdrav duh</p>
+                <br>
+                <div class="w3-large w3-center">
+                    <input class="w3-input inputs" type="text" placeholder="Pretraži sportska događanja..">
+                </div>
+                <br>
+                <div class="w3-large w3-center">
+                    <h3>
+                    Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.
+                    </h3>
+                    <h3>Isprobaj pretragu po četvrtima na mapi 
+                    <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-wide w3-underline">Zagrebačke četvrti</a>
+                    </h3>
+                    <h3>
+                    Možeš pretraživati i po sportskim objektima
+                    <a href="#objects" class="w3-bold w3-link w3-btn w3-wide w3-underline">Sportski objekti</a>
+                    </h3>
+                </div>
+            </div>
         </div>
-        <hr>
-        <div class="container glass2">
-          <img src="public/img/sponsor.png" class="sponsorImage" alt="">
-          <h6>Sponsor name</h6>
-        </div>
-        <hr>
-        <div class="container glass2">
-          <img src="public/img/sponsor.png" class="sponsorImage" alt="">
-          <h6>Sponsor name</h6>
-        </div>
-      </div>
-      
     </div>
   </div>
   <hr class="borderTopBlue">
@@ -407,7 +284,99 @@
     </div>
   </div>
   <hr class="borderTopBlue">
-
+  <!-- Scrollers slideshow-->
+  <div class="" id="scrollers">
+    <div class="w3-row">
+      Ne propustite trenutna događanja..
+    </div>
+    <div class="w3-grid grid4">
+      <div class="w3-panel w3-scrollers topScrollers">
+          <header class="w3-container">
+            <h6 class="w3-underline fade-text scrollPlace"></h6>
+          </header>
+          <div class="content">
+            <span class="fade-text scrollEvent"></span>
+          </div>
+          <footer>
+            <div class="w3-left">
+              <span class="fade-text scrollDate"></span>
+            </div>
+            <div class="w3-right fade-text">
+              <i class="fa fa-facebook-official w3-hover-opacity"></i>
+              <i class="fa fa-instagram w3-hover-opacity"></i>
+              <i class="fa fa-snapchat w3-hover-opacity"></i>
+              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+              <i class="fa fa-twitter w3-hover-opacity"></i>
+              <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+          </footer>
+      </div>
+      <div class="w3-panel w3-scrollers topScrollers">
+          <header class="w3-container">
+            <h6 class="w3-underline fade-text scrollPlace"></h6>
+          </header>
+          <div class="content">
+            <span class="fade-text scrollEvent"></span>
+          </div>
+          <footer>
+            <div class="w3-left">
+              <span class="fade-text scrollDate"></span>
+            </div>
+            <div class="w3-right fade-text">
+              <i class="fa fa-facebook-official w3-hover-opacity"></i>
+              <i class="fa fa-instagram w3-hover-opacity"></i>
+              <i class="fa fa-snapchat w3-hover-opacity"></i>
+              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+              <i class="fa fa-twitter w3-hover-opacity"></i>
+              <i class="fa fa-linkedin w3-hover-opacity"></i>
+          </div>
+          </footer>
+      </div>
+      <div class="w3-panel w3-scrollers topScrollers mobileHide">
+          <header class="w3-container">
+            <h6 class="w3-underline fade-text scrollPlace"></h6>
+          </header>
+          <div class="content">
+            <span class="fade-text scrollEvent"></span>
+          </div>
+          <footer>
+            <div class="w3-left">
+              <span class="fade-text scrollDate"></span>
+            </div>
+            <div class="w3-right fade-text">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+          </footer>
+      </div>
+      <div class="w3-panel w3-scrollers topScrollers mobileHide middleHide">
+          <header class="w3-container">
+            <h6 class="w3-underline fade-text scrollPlace"></h6>
+          </header>
+          <div class="content">
+            <span class="fade-text scrollEvent"></span>
+          </div>
+          <footer>
+            <div class="w3-left">
+              <span class="fade-text scrollDate"></span>
+            </div>
+            <div class="w3-right fade-text">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+          </footer>
+      </div>
+    </div>
+  </div>
+  <hr class="borderTopBlue">
   <!-- Footer -->
   <footer class="w3-center w3-padding-64 glass3 defaultMargins bigScreen">
     <a href="#home" class="w3-button w3-indigo"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>

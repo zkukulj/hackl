@@ -1,0 +1,39 @@
+    .objektiGrid {
+        margin-top:60px;
+        display: grid;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: start;
+        align-content: stretch;
+        gap: 10px;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+    }
+    .event-item > img {
+        vertical-align: middle;
+        width: 220px;
+        height: auto;
+    }
+    h3 {
+        word-wrap: break-word;
+    }
+    .event-item{
+        text-align: center;
+        cursor: pointer;
+    }
+    .event-name-desc > h3{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    @media (min-width: 700px) and (max-width: 970px){
+        .objektiGrid {
+            grid-template-columns:1fr 1fr 1fr;
+        }
+    }
+    @media (max-width: 699px){
+        .objektiGrid {
+            grid-template-columns:1fr 1fr;
+        }
+        .event-item > img {
+            width: 180px;
+        }
+    }
