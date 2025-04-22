@@ -379,9 +379,9 @@ canvas {
   }
 }
 @media  (max-width: 1267px) {
-.w3-bar .w3-bar-item {
-    padding: 16px 8px;
-}
+  .w3-bar .w3-bar-item {
+      padding: 16px 8px;
+  }
 }
 @media  (min-width: 1500px) {
   .grid-container{
