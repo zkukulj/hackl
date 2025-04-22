@@ -13,6 +13,7 @@
         el.style.display = el.style.display === 'flex' || el.style.display === '' ? 'none' : 'flex';
     };
     const sendMessage = () => {
+    document.getElementById('sendMsgBtn').setAttribute("disabled", "disabled");
     const input = document.getElementById('chatbox-input');
     const message = input.value;
     if (message.trim() === '') return;
@@ -42,6 +43,7 @@
       const botMessage = document.createElement('div');
       botMessage.textContent = 'Bot: ' + data.response;
       messagesDiv.appendChild(botMessage);
+      document.getElementById('sendMsgBtn').removeAttribute("disabled");
     })
     .catch(error => console.error('Error:', error));
   }

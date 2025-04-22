@@ -42,7 +42,7 @@
       <div class="chatbox-messages" id="chatbox-messages"></div>
       <div class="chatbox-input">
         <textarea class="w3-input" placeholder="Upišite poruku.." maxlength="512" id="chatbox-input" ></textarea>
-        <button title="Pošalji" onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        <button title="Pošalji" id="sendMsgBtn" onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
       </div>
   </div>
   <?php
@@ -50,7 +50,9 @@
   ?>
   <!-- Popup Prozor -->
     <div id="reminder-popup">
-      <h2>🏓 Odabrani događaj</h2>
+      <div class="w3-center">
+        <h2>Email podsjetnik za sportski događaj</h2>
+      </div>
       <select id="events-select" class="hidden">
         <option>Učitavam događaje...</option>
       </select>
@@ -102,18 +104,23 @@
                 <br>
                 <div class="w3-large w3-center">
                     <h3>
+                      Dobrodošli na internet stranice grada Zagreba na kojima možete pronaći informacije o svim sportskim aktivnostima koje se odvijaju u Zagrebu.
+                    </h3>
+                    <hr>
+                    <h3>
                       Pretraži događanja ili ih filtriraj na razne načine
                     </h3>
+                    <hr>
                     <h3>
                       Prema vrsti sportske aktivnosti
-                      <button class="w3-bold w3-link w3-btn w3-wide w3-underline" onclick="contentSwitch('vrsteSporta')">Klikni ovdje</button>
+                      <button class="w3-btn fa fa-arrow-up" onclick="contentSwitch('vrsteSporta')"></button>
                     </h3>
-                    <h3>Isprobaj pretragu po četvrtima na mapi
-                      <button class="w3-bold w3-link w3-btn w3-wide w3-underline" onclick="contentSwitch('kartaCetvrti')">Zagrebačke četvrti</button>
+                    <h3>Po zagrebačkim četvrtima
+                      <button class="w3-btn fa fa-arrow-up" onclick="contentSwitch('kartaCetvrti')"></button>
                     </h3>
                     <h3>
-                      Možeš pretraživati i po sportskim objektima
-                      <a href="#objects" class="w3-bold w3-link w3-btn w3-wide w3-underline">Sportski objekti</a>
+                      Po sportskim objektima
+                      <a href="#objects" class="w3-btn fa fa-arrow-up"></a>
                     </h3>
                 </div>
             </div>
@@ -554,12 +561,21 @@
       document.getElementById(buildWhere).innerHTML = '';
       paginatedEvents.forEach(e => {
         const eventBlock = document.createElement('div');
+        const [day, month, year] = e.eventDate.split('.');
+        const formattedDate = `${year}${month.padStart(2, '0')}${day.padStart(2, '0')}T000000`;
         eventBlock.className = 'w3-panel w3-scrollers w3-leftbar w3-rightbar w3-border-black w3-margin-top';
         eventBlock.innerHTML = `
           <header class="w3-container">
             <h2>${e.eventDate}</h2>
             <h3>${e.eventNameDesc}</h3>
-          <div class="reminder-icon w3-left" onclick="popup.style.display = 'block';setReminderEvent(this)" title="Dodaj podsjetnik">🕒</div>
+            <div class="reminder-icon">
+              <div class="w3-center" onclick="popup.style.display = 'block';setReminderEvent(this)" title="Dodaj podsjetnik">🕒</div>
+              <div class="w3-center" title="Dodaj u Google kalendar">
+                <a title="Dodaj u Google kalendar" href="https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(e.eventNameDesc)}&dates=${formattedDate}/${formattedDate}&details=${encodeURIComponent(e.eventNameDesc)}&location=${encodeURIComponent(e.locationTag)}" target="_blank" rel="noopener noreferrer" >
+                  📅
+                </a>
+              </div>
+            </div>
           <div class="w3-right">
               <i class="fa fa-facebook-official w3-hover-opacity"></i>
               <i class="fa fa-instagram w3-hover-opacity"></i>
