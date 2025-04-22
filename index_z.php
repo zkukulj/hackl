@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="public/css/main_z.css">
+  <link rel="stylesheet" href="public/css/main_z.css?v=<?= hash_file('md5', 'public/css/main_z.css') ?>" />
   <link rel="stylesheet" href="public/css/scrollbar.css">
   <link rel="stylesheet" href="public/css/chat.css">
   <link rel="stylesheet" href="public/css/leftBorderAnimate.css">
@@ -29,6 +30,7 @@
   <link rel="stylesheet" href="public/css/objektiGrid.css">
   <link rel="stylesheet" href="public/css/flatpickr.min.css">
   <link rel="stylesheet" type="text/css" href="public/css/material_blue.css">
+  <link rel="stylesheet" type="text/css" href="public/css/reminderForEvents.css">
 </head>
 <body class="glass">
   <div class="chatbox-bubble" onclick="open_chat(this)">💬</div>
@@ -46,8 +48,42 @@
   <?php
     require 'content/header.php';
   ?>
+  <!-- Popup Prozor -->
+    <div id="reminder-popup">
+      <h2>🏓 Odabrani događaj</h2>
+      <select id="events-select" class="hidden">
+        <option>Učitavam događaje...</option>
+      </select>
+      <div class="w3-center">
+        <hr>
+        <h2 id="popupEventDate"></h2>
+        <h3 id="popupEventTitle"></h3>
+        <hr>
+      </div>
+      <label>
+        <p class="label-title">Koliko dana prije želiš podsjetnik:</p>
+        <select id="reminder-days">
+          <option value="1">1 dan</option>
+          <option value="2">2 dana</option>
+          <option value="3">3 dana</option>
+          <option value="4">4 dana</option>
+          <option value="5">5 dana</option>
+        </select>
+      </label>
+      <input
+        type="email"
+        id="user-email"
+        placeholder="Unesi svoj email"
+        required
+      />
+
+      <button id="save-reminder">Podsjeti me</button>
+      <button id="close-popup">❌</button>
+    </div>
+
+
   <!-- About Section Glavni view -->
-  <div class="w3-main-container" id="home">
+  <div class="w3-main-container " id="home">
     <div class="glassx">
         <div class="grid-container glassx2">
           <div class="item3 padd48 logoHolder glassx2 w3-center mainFrame1">
@@ -66,14 +102,18 @@
                 <br>
                 <div class="w3-large w3-center">
                     <h3>
-                    Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.
-                    </h3>
-                    <h3>Isprobaj pretragu po četvrtima na mapi 
-                    <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-wide w3-underline">Zagrebačke četvrti</a>
+                      Pretraži događanja ili ih filtriraj na razne načine
                     </h3>
                     <h3>
-                    Možeš pretraživati i po sportskim objektima
-                    <a href="#objects" class="w3-bold w3-link w3-btn w3-wide w3-underline">Sportski objekti</a>
+                      Prema vrsti sportske aktivnosti
+                      <button class="w3-bold w3-link w3-btn w3-wide w3-underline" onclick="contentSwitch('vrsteSporta')">Klikni ovdje</button>
+                    </h3>
+                    <h3>Isprobaj pretragu po četvrtima na mapi
+                      <button class="w3-bold w3-link w3-btn w3-wide w3-underline" onclick="contentSwitch('kartaCetvrti')">Zagrebačke četvrti</button>
+                    </h3>
+                    <h3>
+                      Možeš pretraživati i po sportskim objektima
+                      <a href="#objects" class="w3-bold w3-link w3-btn w3-wide w3-underline">Sportski objekti</a>
                     </h3>
                 </div>
             </div>
@@ -221,6 +261,43 @@
               <li>17. Brezovica</li>
             </ul>
         </div>
+    </div>
+  </div>
+
+  <!-- Modal za događanja po vrstama sporta-->
+  <div id="vrsteSporta" class="w3-modal w3-animate-zoom w3-white w3-color" >
+    <span class="w3-button w3-large w3-black w3-padding-small w3-display-topright" onclick="closeMap(this)" title="Zatvori">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-transparent" style="width: 100%;position:relative;">
+      <div class="w3-center" >
+        <h3>Odaberite vrstu sporta</h3>
+        <hr>
+        <div class="modalGrid item2 border-right">
+          <button class="w3-btn leftBorderAnimate ">Nogomet <span class="w3-badge ">5</span></button>
+          <button class="w3-btn leftBorderAnimate ">Košarka <span class="w3-badge">2</span></button>
+          <button class="w3-btn leftBorderAnimate ">Rukomet <span class="w3-badge">2</span></button>
+          <button class="w3-btn leftBorderAnimate">Stolni tenis <span class="w3-badge">3</span></button>
+          <button class="w3-btn leftBorderAnimate">Tenis <span class="w3-badge">5</span></button>
+          <button class="w3-btn leftBorderAnimate">Badminton <span class="w3-badge">1</span></button>
+          <button class="w3-btn leftBorderAnimate">Odbojka <span class="w3-badge">2</span></button>
+          <button class="w3-btn leftBorderAnimate">Padel <span class="w3-badge">2</span></button>
+          <button class="w3-btn leftBorderAnimate">Hokej <span class="w3-badge">1</span></button>
+          <button class="w3-btn leftBorderAnimate">Atletika <span class="w3-badge">7</span></button>
+          <button class="w3-btn leftBorderAnimate">Plivanje <span class="w3-badge">5</span></button>
+          <button class="w3-btn leftBorderAnimate">Vaterpolo <span class="w3-badge">5</span></button>
+          <button class="w3-btn leftBorderAnimate">Veslanje <span class="w3-badge">5</span></button>
+          <button class="w3-btn leftBorderAnimate">Ragbi <span class="w3-badge">5</span></button>
+          <button class="w3-btn leftBorderAnimate">Streličarstvo <span class="w3-badge">5</span></button>
+          <button class="w3-btn leftBorderAnimate">Šah <span class="w3-badge">5</span></button>
+          <button class="w3-btn leftBorderAnimate">Softball <span class="w3-badge">5</span></button>
+          <button class="w3-btn leftBorderAnimate">Ples <span class="w3-badge">5</span></button>
+        </div>
+        <hr>
+        <div class="">
+          Lista događanja
+        </div>
+      </div>
+      <div class="">
+      </div>
     </div>
   </div>
 
@@ -402,6 +479,7 @@
 
  <script src="public/js/flatpickr.js"></script>
  <script src="public/js/topEventsSlideshow.js"></script>
+ <script src="public/js/reminderForEvents.js"></script>
   <script>
     // Tu ćemo spremiti sve evente
     let main_Object = {
@@ -465,6 +543,9 @@
       });
     }
     // END SELEKTORA ZA DATUME
+    const contentSwitch = (modalId) => {
+      document.getElementById(modalId).style.display = 'block';
+    }
     // ZA SPORTSKE DOGAĐAJE BLOCK BUILDER
     const buildEventContent = (ev, buildWhere, currentPage = 1, itemsPerPage = 10) => {
       const startIndex = (currentPage - 1) * itemsPerPage;
@@ -478,6 +559,7 @@
           <header class="w3-container">
             <h2>${e.eventDate}</h2>
             <h3>${e.eventNameDesc}</h3>
+          <div class="reminder-icon w3-left" onclick="popup.style.display = 'block';setReminderEvent(this)" title="Dodaj podsjetnik">🕒</div>
           <div class="w3-right">
               <i class="fa fa-facebook-official w3-hover-opacity"></i>
               <i class="fa fa-instagram w3-hover-opacity"></i>

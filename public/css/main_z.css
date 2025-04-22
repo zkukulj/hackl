@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     letter-spacing: 2px;
-    color:#1b5486;
+    color:#164066;
     background: white;
   }
   .w3-logo-container{
@@ -19,9 +19,6 @@
     background-size: contain; /* Scale image to fit container while maintaining aspect ratio */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Remove repeat-y */
-  }
-  .w3-bar .w3-button {
-    padding: 16px;
   }
   .w3-bar .w3-bar-item {
     padding: 16px 16px;
@@ -71,8 +68,21 @@
     min-height:90vh;
     position:relative;
   }
-  #events{}
-.glassx {
+  #events{
+    margin-top:80px;
+  }
+  .glassx {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display:flex;
+    align-items: center;
+    height: 100vh;
+  }
+    /* .glassx {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -85,7 +95,7 @@
     width: 100%;
     height: 100%;
     z-index:1;
-  }
+  } */
   .glassx2 {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -167,7 +177,7 @@ i {
     align-items:center;
 }
 .w3-main-container{
-  padding:16px 16px;
+  padding:1px 1px;
 }
 .content{
   min-height:45px;
@@ -216,6 +226,7 @@ canvas {
 .modalGrid{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
+  justify-items: center;
 }
 .ulMobile{
   font-size: 10px;
@@ -258,9 +269,12 @@ canvas {
 }
  /* Mobile overrides */
 @media (max-width: 500px){
-  #events{
-    margin-top:350px;
+  #home{
+    margin-top:80px;
   }
+  /* #events{
+    margin-top:350px;
+  } */
   .grid-container{
     grid-template-columns:1fr ;
   }
@@ -297,7 +311,8 @@ canvas {
         margin-top:50px;
     }
     .modalGrid{
-      grid-template-columns:1fr;
+      grid-template-columns:1fr 1fr;
+      justify-items: center;
     }
     .w3-bar .w3-bar-item {
       padding: 8px 8px;
@@ -310,7 +325,10 @@ canvas {
       padding:28px 2px;
     }
 }
-@media (min-width: 501px) and (max-width: 1023px){
+@media (min-width: 501px) and (max-width: 1024px){
+  .logoImg {
+    width: calc(40vw);
+  }
   .grid4{
       grid-template-columns:1fr 1fr 1fr;
   }
@@ -330,6 +348,11 @@ canvas {
     padding-top:2px;
   }
 }
+@media (max-width: 1024px) {
+  .logoHolder {
+    padding:12px;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1200px){
   .imgBackground::before {
     top: -60px;
@@ -346,12 +369,22 @@ canvas {
     top: -80px;
   }
 }
+@media  (min-width: 1267px) {
+  .w3-large > h3 {
+    font-size:18px;
+  }
+}
+@media  (max-width: 1267px) {
+.w3-bar .w3-bar-item {
+    padding: 16px 8px;
+}
+}
 @media  (min-width: 1500px) {
   .grid-container{
     max-width: 98%;
     margin: 0 auto;
     align-items: center;
-    height:98vh;
+    height:auto;
   }
   .item3{
     min-height: 700px;

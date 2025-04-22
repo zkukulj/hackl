@@ -1,0 +1,95 @@
+/* Ikona */
+.reminder-icon {
+  position: fixed;
+  top: 0px;
+  right: 20px;
+  font-size: 32px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.reminder-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Popup prozor */
+#reminder-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+#reminder-popup h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #333;
+}
+
+.label-title {
+  margin-bottom: 6px;
+}
+
+/* Forma */
+#reminder-popup select,
+#reminder-popup input {
+  margin-bottom: 14px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#reminder-popup label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #444;
+}
+
+#save-reminder {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+/* Hover efekt za gumb podsjeti me */
+#save-reminder:hover {
+  background-color: #218838;
+}
+
+#close-popup {
+  background-color: transparent;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  color: #007bff;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  border: none;
+}
+
+/* Hover efekt za gumb zatvaranja */
+#close-popup:hover {
+  color: red;
+}
