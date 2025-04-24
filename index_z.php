@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Zagreb Sport</title>
+  <title>Sport Zagreb</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
@@ -132,6 +132,12 @@
   <div class="w3-container glass3 defaultMargins bigScreen" id="events" >
       <h3 class="w3-center">Trenutna sportska događanja u gradu Zagrebu</h3>
       <!-- Događanja za trenutni mjesec -->
+      <div class="w3-container w3-flex objektFlex">
+        <h5>Filtriraj po datumima:</h5>
+      </div>
+      <div class="w3-container w3-flex objektFlex">
+        <input class="w3-input bookSelect" type="text" id="mainDatePicker" placeholder="Odaberi datum od - do">
+      </div>
       <div class="w3-container" id="eventsEvents">
       </div>
 
@@ -467,12 +473,12 @@
     <div class="w3-grid grid3">
     <div class="w3-xlarge w3-section">
       <h5>Podijeli sa društvom</h5>
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
+      <i id="facebook" class="socialsShares fa fa-facebook-official w3-hover-opacity"></i>
+      <i id="instagram" class="socialsShares fa fa-instagram w3-hover-opacity"></i>
+      <i id="snapchat" class="socialsShares fa fa-snapchat w3-hover-opacity"></i>
+      <i id="pinterest" class="socialsShares fa fa-pinterest-p w3-hover-opacity"></i>
+      <i id="twitter" class="socialsShares fa fa-twitter w3-hover-opacity"></i>
+      <i id="linkedin" class="socialsShares fa fa-linkedin w3-hover-opacity"></i>
     </div>
     <div>
       <p>Powered by <a href="#" title="SugarStone" target="_blank" class="w3-hover-text-green">SugarStone</a></p>
@@ -483,167 +489,15 @@
 
     </div>
   </footer>
-
- <script src="public/js/flatpickr.js"></script>
- <script src="public/js/topEventsSlideshow.js"></script>
- <script src="public/js/reminderForEvents.js"></script>
-  <script>
-    // Tu ćemo spremiti sve evente
-    let main_Object = {
-      events: []
-    };
-
-    // ZA sidebar koji se nalazi u content/header/
-    let mySidebar = document.getElementById("mySidebar");
-
-    const w3_open = () => {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-      } else {
-        mySidebar.style.display = 'block';
-      }
-    }
-    // Close the sidebar with the close button
-    const w3_close = () => {
-        mySidebar.style.display = "none";
-    }
-    // END SIDEBAR
-
-    // TOP SLIDESHOW TEXT FADE IN OUT
-    const fadeOutText = () => {
-      const textElements = document.querySelectorAll('.fade-text');
-      textElements.forEach(element => {
-        element.classList.add('fade-out');
-      });
-    }
-    const fadeInText = () => {
-      const textElements = document.querySelectorAll('.fade-text');
-      textElements.forEach(element => {
-        element.classList.remove('fade-out');
-        element.classList.add('fade-in');
-      });
-    }
-    // END TOP SLIDESHOW TEXT FADE IN OUT
-    // SELEKTOR ZA DATUME NA MODALU OBJEKTI TODO
-    const getEventsByDate = () => {
-
-    }
-    async function initFlatpickr() {
-      let disabledDates = await getEventsByDate();
-      const screenWidth = window.innerWidth;
-      const showMonths = screenWidth < 641 ? 1 : 2;
-      flatpickr("#datePicker", {
-        mode: "range",
-        showMonths: showMonths,
-        minDate: "today",
-        altInput: true,
-        altFormat: "j. F, Y",
-        dateFormat: "Y-m-d",
-        onChange: function(selectedDates, dateStr, instance) {
-        if (selectedDates.length === 2) {
-          const bookingData = {
-            dateRange: dateStr
-          };
-          console.log(bookingData)
-        }
-      },
-      });
-    }
-    // END SELEKTORA ZA DATUME
-    const contentSwitch = (modalId) => {
-      document.getElementById(modalId).style.display = 'block';
-    }
-    // ZA SPORTSKE DOGAĐAJE BLOCK BUILDER
-    const buildEventContent = (ev, buildWhere, currentPage = 1, itemsPerPage = 10) => {
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = startIndex + itemsPerPage;
-      const paginatedEvents = ev.slice(startIndex, endIndex);
-      document.getElementById(buildWhere).innerHTML = '';
-      paginatedEvents.forEach(e => {
-        const eventBlock = document.createElement('div');
-        const [day, month, year] = e.eventDate.split('.');
-        const formattedDate = `${year}${month.padStart(2, '0')}${day.padStart(2, '0')}T000000`;
-        eventBlock.className = 'w3-panel w3-scrollers w3-leftbar w3-rightbar w3-border-black w3-margin-top';
-        eventBlock.innerHTML = `
-          <header class="w3-container">
-            <h2>${e.eventDate}</h2>
-            <h3>${e.eventNameDesc}</h3>
-            <div class="reminder-icon">
-              <div class="w3-center" onclick="popup.style.display = 'block';setReminderEvent(this)" title="Dodaj podsjetnik">🕒</div>
-              <div class="w3-center" title="Dodaj u Google kalendar">
-                <a title="Dodaj u Google kalendar" href="https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(e.eventNameDesc)}&dates=${formattedDate}/${formattedDate}&details=${encodeURIComponent(e.eventNameDesc)}&location=${encodeURIComponent(e.locationTag)}" target="_blank" rel="noopener noreferrer" >
-                  📅
-                </a>
-              </div>
-            </div>
-          <div class="w3-right">
-              <i class="fa fa-facebook-official w3-hover-opacity"></i>
-              <i class="fa fa-instagram w3-hover-opacity"></i>
-              <i class="fa fa-snapchat w3-hover-opacity"></i>
-              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-              <i class="fa fa-twitter w3-hover-opacity"></i>
-              <i class="fa fa-linkedin w3-hover-opacity"></i>
-            </div></header>`;
-        document.getElementById(buildWhere).appendChild(eventBlock);
-      });
-
-      // Create pagination links
-      const totalPages = Math.ceil(ev.length / itemsPerPage);
-      const paginationLinks = document.createElement('div');
-      paginationLinks.className = 'pagination-links w3-bar w3-center w3-paper';
-      const descriptivetext = document.createElement('span');
-      descriptivetext.innerText = 'Stranica: ';
-      paginationLinks.appendChild(descriptivetext);
-      for (let i = 1; i <= totalPages; i++) {
-        const link = document.createElement('a');
-        link.href = 'javascript:void(0)';
-        link.textContent = i;
-        i == currentPage ? link.className = 'w3-button w3-underline w3-sand':link.className = 'w3-button';
-        link.onclick = () => buildEventContent(ev, buildWhere, i, itemsPerPage);
-        paginationLinks.appendChild(link);
-      }
-
-      document.getElementById(buildWhere).appendChild(paginationLinks);
-    };
-    // FILTRIRANJA EVENATA
-    const filterEvents = (ev) => {
-      const filterWhere = ev.getAttribute("data-filter-id");
-      const eventBlocks = document.getElementById(filterWhere).querySelectorAll(`.w3-panel.w3-scrollers.w3-leftbar.w3-rightbar.w3-border-black.w3-margin-top`);
-      if( ev.value.length > 2 ){
-        const input = ev.value.toLowerCase();
-        eventBlocks.forEach(block => {
-          const eventName = block.querySelector('h3').innerText.toLowerCase();
-          if (eventName.includes(input)) {
-            block.style.display = 'block';
-          } else {
-            block.style.display = 'none';
-          }
-        });
-      } else {
-        eventBlocks.forEach(block => {
-          block.style.display = 'block';
-        });
-      }
-    }
-    // NAKON KLIKA NA OBJEKT KREIRANJE SADRŽAJA MODALA OBJEKTI
-    const beforeObjektiModalOpen = (el) => {
-      const imgSrc = el.querySelector('img.property-img').src;
-      const objectLocation = el.querySelector('h3').innerHTML;
-      document.getElementById('objectImg').src = imgSrc;
-      document.getElementById('objectName').innerHTML = objectLocation;
-      const currentMonth = new Date().getMonth() + 1; // get the current month (1-12)
-      const filteredEvents = main_Object.events.filter((event) => {
-        return event.eventMonth === currentMonth.toString().padStart(2, '0') && event.locationTag === 'RSC Jarun';;
-      });
-      buildEventContent(filteredEvents, 'objectEvents',1 ,10);
-      document.getElementById('objektiModal').style.display='block';
-      initFlatpickr();
-    }
-  </script>
+  <script src="public/js/flatpickr.js"></script>
+  <script src="public/js/hr.js"></script>
+  <script src="public/js/topEventsSlideshow.js"></script>
+  <script src="public/js/reminderForEvents.js"></script>
   <script src="public/js/webworkers.js"></script>
   <script src="public/js/chat.js"></script>
   <script src="public/js/mapSpots.js"></script>
   <script src="public/js/acctoolbar.min.js"></script>
+  <script src="public/js/main-z.js"></script>
   <script>
   // Accessibility tools script
     window.onload = function() {

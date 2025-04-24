@@ -3,7 +3,7 @@
   <div class="w3-bar w3-card glass2 glass-border" id="myNavbar">
     <a href="#home" class="w3-bar-item w3-button w3-wide w3-bold">
     <img src="./public/img/zglogo.webp" style="height:24px;width:auto;" class="w3-image" alt="">
-    ZAGREB SPORT
+    SPORT ZAGREB
     <!-- <img src="public/img/logo.png" class="w3-image" alt=""> -->
     </a>
     <!-- Right-sided navbar links -->

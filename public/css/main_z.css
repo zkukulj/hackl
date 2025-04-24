@@ -347,14 +347,26 @@ canvas {
   }
 
 }
-@media (max-width: 755px) {
+@media (max-width: 768px) {
   .flexPadd {
     padding-top:2px;
   }
+  .w3-bar .w3-bar-item  {
+    padding: 16px 8px;
+}
 }
 @media (max-width: 1024px) {
   .logoHolder {
     padding:12px;
+  }
+  .logoImg {
+    width:calc(40vw);
+  }
+  .glassx{
+    height:auto;
+  }
+  #home{
+    margin-top: 60px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
@@ -378,9 +390,13 @@ canvas {
     font-size:18px;
   }
 }
-@media  (max-width: 1267px) {
-  .w3-bar .w3-bar-item {
-      padding: 16px 8px;
+@media  (min-width: 1025px) and (max-width: 1267px) {
+  .logoImg {
+      width:80%;
+      margin-top: 200px;
+  }
+  .glassx{
+    margin-top:60px;
   }
 }
 @media  (min-width: 1500px) {
