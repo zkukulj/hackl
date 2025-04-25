@@ -21,7 +21,7 @@
     }
     // END SIDEBAR
 
-    // TOP SLIDESHOW TEXT FADE IN OUT
+    // TOP ILI BOTTOM SLIDESHOW TEXT FADE IN OUT
     const fadeOutText = () => {
       const textElements = document.querySelectorAll('.fade-text');
       textElements.forEach(element => {
