@@ -16,17 +16,13 @@
 <html>
 
 <head>
-  <title>Zagreb Sport</title>
+  <title>Sport Zagreb</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<<<<<<< Updated upstream
-  <link rel="stylesheet" href="public/css/main_z.css">
-=======
   <link rel="stylesheet" href="public/css/main_z.css?v=<?= hash_file('md5', 'public/css/main_z.css') ?>" />
->>>>>>> Stashed changes
   <link rel="stylesheet" href="public/css/scrollbar.css">
   <link rel="stylesheet" href="public/css/chat.css">
   <!-- <link rel="stylesheet" href="public/css/leftBorderAnimate.css"> -->
@@ -34,13 +30,10 @@
   <link rel="stylesheet" href="public/css/objektiGrid.css">
   <link rel="stylesheet" href="public/css/flatpickr.min.css">
   <link rel="stylesheet" type="text/css" href="public/css/material_blue.css">
-<<<<<<< Updated upstream
-=======
   <link rel="stylesheet" type="text/css" href="public/css/reminderForEvents.css">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
->>>>>>> Stashed changes
 </head>
 
 <body class="glass">
@@ -55,51 +48,10 @@
       <textarea class="w3-input" placeholder="Upišite poruku.." maxlength="512" id="chatbox-input"></textarea>
       <button title="Pošalji" id="sendMsgBtn" onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
     </div>
-<<<<<<< Updated upstream
-      <div class="chatbox-messages" id="chatbox-messages"></div>
-      <div class="chatbox-input">
-        <textarea class="w3-input" placeholder="Upišite poruku.." maxlength="512" id="chatbox-input" ></textarea>
-        <button title="Pošalji" onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
-      </div>
-=======
->>>>>>> Stashed changes
   </div>
   <?php
   require 'content/header.php';
   ?>
-<<<<<<< Updated upstream
-  <!-- About Section Glavni view -->
-  <div class="w3-main-container" id="home">
-    <div class="glassx">
-        <div class="grid-container glassx2">
-          <div class=" item3 padd48">
-            <img src="public/img/szg121.png" alt="">
-          </div>
-            <div class=" item3 padd48">
-                <div class="w3-jumbo w3-hide-small imgBackground w3-center w3-bold flexPadd hidden">Uživaj u sportu,</div>
-                <div class="w3-jumbo w3-hide-small w3-center w3-bold hidden">Zagreb nudi puno</div>
-                <div class="w3-xxlarge w3-hide-large w3-hide-medium w3-center">Uživaj u sportu,</div>
-                <div class="w3-xxlarge w3-hide-large w3-hide-medium w3-center">Zagreb nudi puno</div>
-                <p class="w3-xlarge w3-hide-small w3-center">U zdravom tijelu zdrav duh</p>
-                <br>
-                <div class="w3-large w3-center">
-                    <input class="w3-input inputs" type="text" placeholder="Pretraži sportska događanja..">
-                </div>
-                <br>
-                <div class="w3-large w3-center">
-                    <h3>
-                    Pretraži događanja ili filtriraj sportske aktivnosti izbornikom s lijeve strane.
-                    </h3>
-                    <h3>Isprobaj pretragu po četvrtima na mapi 
-                    <a onclick="event.preventDefault();document.getElementById('kartaCetvrti').style.display='block'" href="#" class="w3-bold w3-link w3-btn w3-wide w3-underline">Zagrebačke četvrti</a>
-                    </h3>
-                    <h3>
-                    Možeš pretraživati i po sportskim objektima
-                    <a href="#objects" class="w3-bold w3-link w3-btn w3-wide w3-underline">Sportski objekti</a>
-                    </h3>
-                </div>
-            </div>
-=======
   <!-- Popup Prozor -->
   <div id="reminder-popup">
     <div class="w3-center">
@@ -204,7 +156,6 @@
       <div class="grid-container glassx2">
         <div class="item3 padd48 logoHolder glassx2 w3-center mainFrame1">
           <img class="logoImg" src="public/img/logo-sport-zagreb.svg" alt="">
->>>>>>> Stashed changes
         </div>
         <div class=" item3 padd48 glassx2 mainFrame2">
           <h1 class="text-red-500 text-8xl">test</h1>
@@ -242,17 +193,6 @@
         </div>
       </div>
     </div>
-<<<<<<< Updated upstream
-  </div>
-  <hr class="borderTopBlue">
-
-  <!-- Događanja -->
-  <div class="w3-container glass3 defaultMargins bigScreen" id="events" >
-      <h3 class="w3-center">Trenutna sportska događanja u gradu Zagrebu</h3>
-      <!-- Događanja za trenutni mjesec -->
-      <div class="w3-container" id="eventsEvents">
-      </div>
-=======
   </div> -->
 
   <!-- Događanja -->
@@ -267,7 +207,6 @@
     </div>
     <div class="grid grid-cols-2 gap-10" id="eventsEvents">
     </div>
->>>>>>> Stashed changes
 
   </div>
   <hr class="borderTopBlue">
@@ -405,8 +344,6 @@
     </div>
   </div>
 
-<<<<<<< Updated upstream
-=======
   <!-- Modal za događanja po vrstama sporta-->
   <div id="vrsteSporta" class="w3-modal w3-animate-zoom w3-white w3-color">
     <span class="w3-button w3-large w3-black w3-padding-small w3-display-topright" onclick="closeMap(this)" title="Zatvori">×</span>
@@ -444,7 +381,6 @@
     </div>
   </div>
 
->>>>>>> Stashed changes
   <!-- Modal za događanja po objektima-->
   <div id="objektiModal" class="w3-modal w3-animate-zoom w3-white w3-color">
     <span class="w3-button w3-large w3-black w3-padding-small w3-display-topright" onclick="closeMap(this)" title="Zatvori">×</span>
@@ -602,23 +538,6 @@
     <a href="#home" class="w3-button w3-indigo"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <hr>
     <div class="w3-grid grid3">
-<<<<<<< Updated upstream
-    <div class="w3-xlarge w3-section">
-      <h5>Podijeli sa društvom</h5>
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-    <div>
-      <p>Powered by <a href="#" title="SugarStone" target="_blank" class="w3-hover-text-green">SugarStone</a></p>
-    </div>
-    <div>
-      <button onclick="document.getElementById('modalKolacici').style.display='block'" class="w3-button w3-indigo">O kolačićima</button>
-    </div>
-=======
       <div class="w3-xlarge w3-section">
         <h5>Podijeli sa društvom</h5>
         <i id="facebook" class="socialsShares fa fa-facebook-official w3-hover-opacity"></i>
@@ -634,162 +553,18 @@
       <div>
         <button onclick="document.getElementById('modalKolacici').style.display='block'" class="w3-button w3-indigo">O kolačićima</button>
       </div>
->>>>>>> Stashed changes
 
     </div>
   </footer>
-
- <script src="public/js/flatpickr.js"></script>
- <script src="public/js/topEventsSlideshow.js"></script>
-  <script>
-    // Tu ćemo spremiti sve evente
-    let main_Object = {
-      events: []
-    };
-
-    // ZA sidebar koji se nalazi u content/header/
-    let mySidebar = document.getElementById("mySidebar");
-
-    const w3_open = () => {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-      } else {
-        mySidebar.style.display = 'block';
-      }
-    }
-    // Close the sidebar with the close button
-    const w3_close = () => {
-        mySidebar.style.display = "none";
-    }
-    // END SIDEBAR
-
-    // TOP SLIDESHOW TEXT FADE IN OUT
-    const fadeOutText = () => {
-      const textElements = document.querySelectorAll('.fade-text');
-      textElements.forEach(element => {
-        element.classList.add('fade-out');
-      });
-    }
-    const fadeInText = () => {
-      const textElements = document.querySelectorAll('.fade-text');
-      textElements.forEach(element => {
-        element.classList.remove('fade-out');
-        element.classList.add('fade-in');
-      });
-    }
-    // END TOP SLIDESHOW TEXT FADE IN OUT
-    // SELEKTOR ZA DATUME NA MODALU OBJEKTI TODO
-    const getEventsByDate = () => {
-
-    }
-    async function initFlatpickr() {
-      let disabledDates = await getEventsByDate();
-      const screenWidth = window.innerWidth;
-      const showMonths = screenWidth < 641 ? 1 : 2;
-      flatpickr("#datePicker", {
-        mode: "range",
-        showMonths: showMonths,
-        minDate: "today",
-        altInput: true,
-        altFormat: "j. F, Y",
-        dateFormat: "Y-m-d",
-        onChange: function(selectedDates, dateStr, instance) {
-        if (selectedDates.length === 2) {
-          const bookingData = {
-            dateRange: dateStr
-          };
-          console.log(bookingData)
-        }
-      },
-      });
-    }
-    // END SELEKTORA ZA DATUME
-    // ZA SPORTSKE DOGAĐAJE BLOCK BUILDER
-    const buildEventContent = (ev, buildWhere, currentPage = 1, itemsPerPage = 10) => {
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = startIndex + itemsPerPage;
-      const paginatedEvents = ev.slice(startIndex, endIndex);
-      document.getElementById(buildWhere).innerHTML = '';
-      paginatedEvents.forEach(e => {
-        const eventBlock = document.createElement('div');
-        eventBlock.className = 'w3-panel w3-scrollers w3-leftbar w3-rightbar w3-border-black w3-margin-top';
-        eventBlock.innerHTML = `
-          <header class="w3-container">
-            <h2>${e.eventDate}</h2>
-            <h3>${e.eventNameDesc}</h3>
-          <div class="w3-right">
-              <i class="fa fa-facebook-official w3-hover-opacity"></i>
-              <i class="fa fa-instagram w3-hover-opacity"></i>
-              <i class="fa fa-snapchat w3-hover-opacity"></i>
-              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-              <i class="fa fa-twitter w3-hover-opacity"></i>
-              <i class="fa fa-linkedin w3-hover-opacity"></i>
-            </div></header>`;
-        document.getElementById(buildWhere).appendChild(eventBlock);
-      });
-
-      // Create pagination links
-      const totalPages = Math.ceil(ev.length / itemsPerPage);
-      const paginationLinks = document.createElement('div');
-      paginationLinks.className = 'pagination-links w3-bar w3-center w3-paper';
-      const descriptivetext = document.createElement('span');
-      descriptivetext.innerText = 'Stranica: ';
-      paginationLinks.appendChild(descriptivetext);
-      for (let i = 1; i <= totalPages; i++) {
-        const link = document.createElement('a');
-        link.href = 'javascript:void(0)';
-        link.textContent = i;
-        i == currentPage ? link.className = 'w3-button w3-underline w3-sand':link.className = 'w3-button';
-        link.onclick = () => buildEventContent(ev, buildWhere, i, itemsPerPage);
-        paginationLinks.appendChild(link);
-      }
-
-      document.getElementById(buildWhere).appendChild(paginationLinks);
-    };
-    // FILTRIRANJA EVENATA
-    const filterEvents = (ev) => {
-      const filterWhere = ev.getAttribute("data-filter-id");
-      const eventBlocks = document.getElementById(filterWhere).querySelectorAll(`.w3-panel.w3-scrollers.w3-leftbar.w3-rightbar.w3-border-black.w3-margin-top`);
-      if( ev.value.length > 2 ){
-        const input = ev.value.toLowerCase();
-        eventBlocks.forEach(block => {
-          const eventName = block.querySelector('h3').innerText.toLowerCase();
-          if (eventName.includes(input)) {
-            block.style.display = 'block';
-          } else {
-            block.style.display = 'none';
-          }
-        });
-      } else {
-        eventBlocks.forEach(block => {
-          block.style.display = 'block';
-        });
-      }
-    }
-    // NAKON KLIKA NA OBJEKT KREIRANJE SADRŽAJA MODALA OBJEKTI
-    const beforeObjektiModalOpen = (el) => {
-      const imgSrc = el.querySelector('img.property-img').src;
-      const objectLocation = el.querySelector('h3').innerHTML;
-      document.getElementById('objectImg').src = imgSrc;
-      document.getElementById('objectName').innerHTML = objectLocation;
-      const currentMonth = new Date().getMonth() + 1; // get the current month (1-12)
-      const filteredEvents = main_Object.events.filter((event) => {
-        return event.eventMonth === currentMonth.toString().padStart(2, '0') && event.locationTag === 'RSC Jarun';;
-      });
-      buildEventContent(filteredEvents, 'objectEvents',1 ,10);
-      document.getElementById('objektiModal').style.display='block';
-      initFlatpickr();
-    }
-  </script>
+  <script src="public/js/flatpickr.js"></script>
+  <script src="public/js/hr.js"></script>
+  <script src="public/js/topEventsSlideshow.js"></script>
+  <script src="public/js/reminderForEvents.js"></script>
   <script src="public/js/webworkers.js"></script>
   <script src="public/js/chat.js"></script>
   <script src="public/js/mapSpots.js"></script>
-<<<<<<< Updated upstream
-  <script src="public/js/acctoolbar.min.js"></script>
-=======
   <!-- <script src="public/js/acctoolbar.min.js"></script> -->
   <script src="public/js/main-z.js"></script>
->>>>>>> Stashed changes
   <script>
     // Accessibility tools script
     window.onload = function() {

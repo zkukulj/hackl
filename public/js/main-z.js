@@ -68,11 +68,13 @@ const buildEventContent = (
   currentPage = 1,
   itemsPerPage = 10
 ) => {
+  console.log("events", ev);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedEvents = ev.slice(startIndex, endIndex);
   document.getElementById(buildWhere).innerHTML = "";
   paginatedEvents.forEach((e) => {
+    console.log("event", e);
     const eventBlock = document.createElement("div");
     const [day, month, year] = e.eventDate.split(".");
     const formattedDate = `${year}${month.padStart(2, "0")}${day.padStart(
@@ -250,23 +252,3 @@ document.querySelectorAll(".socialsShares").forEach((icon) => {
     window.open(shareUrl, "_blank", "noopener,noreferrer");
   });
 });
-
-fetch("https://flashchat.eu/hackl/functions/getEventlist.php", {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  },
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    //   main_Object.events = data;
-    //   const filteredEvents = data.filter(
-    //     (event) => event.locationTag === "RSC Jarun"
-    //   );
-    //   buildEventContent(filteredEvents, "eventsEvents", 1, 10);
-    //   buildEventContent(data, "objectEvents", 1, 10);
-  })
-  .catch((error) => console.error("Error fetching events:", error));
-// END SOCIAL SHARES NA DNU STRANICE

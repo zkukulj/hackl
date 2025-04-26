@@ -16,12 +16,19 @@ if (typeof Worker !== "undefined") {
     }
   };
   w.onmessage = function (event) {
-    if (event.data.rez.length > 0) {
-      main_Object.events = event.data.rez;
+    if (event.data.length > 0) {
+      main_Object.events = event.data;
       const currentMonth = new Date().getMonth() + 1; // get the current month (1-12)
       const filteredEvents = main_Object.events.filter((event) => {
-        return event.eventMonth === currentMonth.toString().padStart(2, "0");
+        const eventMonth = new Date(event.match_date).getMonth() + 1; // get the month from the event date (1-12)
+        console.log("event.match_date", event.match_date);
+        // const eventMonth = parseInt(event.match_date.substring(5, 7)); // extract the month from the date string
+        console.log("eventMonth", eventMonth.toString().padStart(2, "0"));
+        console.log("currentMonth", currentMonth.toString().padStart(2, "0"));
+        return event.match_date == currentMonth.toString().padStart(2, "0");
       });
+
+      console.log("filteredEvents", filteredEvents);
       loopScrollers(filteredEvents);
       buildEventContent(filteredEvents, "eventsEvents", 1, 10);
     }
