@@ -1,0 +1,419 @@
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Poppins", sans-serif}
+  body, html {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 2px;
+    color:#164066;
+    background: white;
+  }
+  .w3-logo-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:0;
+    width: 100%;
+    height: 100vh;
+    opacity:0.05;
+    background-image: url("../img/zvt.webp");
+    background-size: contain; /* Scale image to fit container while maintaining aspect ratio */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Remove repeat-y */
+  }
+  .w3-bar .w3-bar-item {
+    padding: 16px 16px;
+  }
+  /* Defaults */
+  .w3-top{
+    z-index:4;
+  }
+  .w3-modal{
+    z-index:5;
+  }
+  .langIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+  /* Top bar background color */
+  .whitesmoke {
+    background-color: whitesmoke;
+  }
+  .glass-border{
+    border:none;
+    border-radius: 0;
+  }
+  .hidden{
+    display:none !important;
+  }
+  .border-left{
+    border-left:1px solid #569ff7;
+  }
+  .border-right{
+    border-right:1px solid #569ff7;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    opacity:1;
+    margin-top: 60px;
+  }
+  /* blok za sponzore, reklame */
+  #home{
+    background-image: url("../img/slidex1.png");
+    background-repeat: repeat-x repeat-y;
+    background-size: contain;
+    min-height:90vh;
+    position:relative;
+  }
+  #events{
+    margin-top:80px;
+  }
+  .glassx {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display:flex;
+    align-items: center;
+    height: 100vh;
+  }
+    /* .glassx {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    z-index:1;
+  } */
+  .glassx2 {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .glassx21 {
+    background: rgb(15 59 183 / 70%);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color:whitesmoke;
+}
+  .inputs {
+    -webkit-text-stroke-color: darkgray;
+    padding:16px;
+    background: beige;
+    border-radius: 24px;
+  }
+  input:focus,input:focus-visible,input:focus-within,input:active  {
+    border-bottom: 2px solid #007bff !important; /* Change the border color to your desired color */
+    box-shadow: 0 0 10px rgba(239, 119, 119, 0.2) !important; /* Add a subtle shadow effect */
+    outline: none !important;
+  }
+  /* custom background boje */
+  .w3-dodgerblue{
+    background-color: rgb(234, 237, 241);
+  }
+  .w3-backcolor{
+    background: dodgerblue;
+  }
+  .padd48 {
+    padding:48px;
+  }
+  /* padding za small image */
+  .flexPadd {
+    padding-top:22px;
+  }
+  .borderTopBlue{
+    border-top: 1px solid #569ff7;
+  }
+  .defaultMargins{
+    margin-left: 16px;
+    margin-right: 16px;
+    padding:28px 16px;
+  }
+  
+  .item2 > button{
+    letter-spacing: 2px;
+  }
+
+  header>h2{
+    text-decoration: underline;
+  }
+  .w3-text-white, .w3-hover-text-white:hover {
+    color: #1b5486 !important;
+  }
+  .w3-underline{
+    text-decoration: underline;
+  }
+  .w3-color{
+    color: black;
+  }
+i {
+  cursor: pointer;
+}
+.w3-right > .fa {
+  font-size: 20px;
+  color: #1b5486;
+}
+.w3-panel{
+    position:relative;
+}
+.grid4{
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.grid3{
+    grid-template-columns:1fr 1fr 1fr;
+    align-items:center;
+}
+.w3-main-container{
+  padding:1px 1px;
+}
+.content{
+  min-height:45px;
+}
+.w3-barr > a{
+  padding: 1px 16px;
+}
+.w3-padding-btn {
+    padding: 8px 24px;
+    border-bottom: #211f1f solid 1px;
+}
+/* back mage small */
+
+/* slideshow sa vrha stranice - trenutna događanja */
+#scrollers{
+    margin-left:10px;
+    margin-right:10px;
+    height:164px;
+    margin-top:70px;
+    text-align: center;
+}
+#scrollers > span{
+  text-align: center;
+}
+.w3-scrollers {
+    color: rgb(22, 2, 2) !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.w3-scrollers > .w3-container {
+  cursor: pointer;
+}
+.topScrollers {
+  min-height:112px;
+}
+/* canvas za sliku gradskih četvrti*/
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:6;
+}
+/* karta zg modal*/
+.modalGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  justify-items: center;
+}
+.ulMobile{
+  font-size: 10px;
+}
+.ulMobile li{
+  padding:8px 4px !important;
+}
+.w3-badge{
+  background:none;
+  color: gray;
+  font-size: 11px;
+}
+.w3-color-sand{
+    color:wheat;
+}
+/* OBJEKTI MODAL*/
+/* kontejner slike u objekti modalu */
+.imgHolderObjekti {
+  background: linear-gradient(to bottom, #cbc4c4, #f2eaea, #efe9e4);
+  padding:16px;
+}
+.imgHolderObjekti > img {
+  width:700px;
+}
+#objectsFrame {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#objects {
+  padding:28px 16px;
+}
+.w3-flex.objektFlex {
+  justify-content: center;
+}
+.w3-flex.objektFlex > .w3-input {
+  max-width:350px;
+}
+.w3-sidebar{
+    z-index:5;
+}
+ /* Mobile overrides */
+@media (max-width: 500px){
+  #home{
+    margin-top:80px;
+  }
+  /* #events{
+    margin-top:350px;
+  } */
+  .grid-container{
+    grid-template-columns:1fr ;
+  }
+  .logoImg{
+    width: 100%;
+  }
+  h4 {
+    font-size: 14px;
+  }
+    .grid4{
+        grid-template-columns:1fr 1fr;
+    }
+    .grid4 > .w3-panel{
+        margin-top:8px;
+        margin-bottom:8px;
+    }
+    .grid3{
+        grid-template-columns:1fr ;
+    }
+    .w3-main-container{
+        padding:16px 2px;
+    }
+    .mobileHide, .w3-badge{
+        display:none !important;
+    }
+    .padd48{
+        padding:2px;
+    }
+    .w3-half{
+      margin-top:6px;
+    }
+    #scrollers{
+        text-align: center;
+        margin-top:50px;
+    }
+    .modalGrid{
+      grid-template-columns:1fr 1fr;
+      justify-items: center;
+    }
+    .w3-bar .w3-bar-item {
+      padding: 8px 8px;
+    }
+    .item2 > button {
+      letter-spacing: 1px;
+      max-width: 125px;
+    }
+    #objects{
+      padding:28px 2px;
+    }
+}
+@media (min-width: 501px) and (max-width: 1024px){
+  .logoImg {
+    width: calc(40vw);
+  }
+  .grid4{
+      grid-template-columns:1fr 1fr 1fr;
+  }
+  .middleHide, .w3-badge{
+    display:none !important;
+  }
+    .imgHolderObjekti > img {
+    width:100%;
+  }
+  .grid-container{
+    grid-template-columns:1fr ;
+  }
+
+}
+@media (max-width: 768px) {
+  .flexPadd {
+    padding-top:2px;
+  }
+  .w3-bar .w3-bar-item  {
+    padding: 16px 8px;
+}
+}
+@media (max-width: 1024px) {
+  .logoHolder {
+    padding:12px;
+  }
+  .logoImg {
+    width:calc(40vw);
+  }
+  .glassx{
+    height:auto;
+  }
+  #home{
+    margin-top: 60px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px){
+  .imgBackground::before {
+    top: -60px;
+  }
+  .flexPadd {
+    padding-top:2px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .flexPadd {
+    padding-top:2px;
+  }
+  .imgBackground::before {
+    top: -80px;
+  }
+}
+@media  (min-width: 1267px) {
+  .w3-large > h3 {
+    font-size:18px;
+  }
+}
+@media  (min-width: 1025px) and (max-width: 1267px) {
+  .logoImg {
+      width:80%;
+      margin-top: 200px;
+  }
+  .glassx{
+    margin-top:60px;
+  }
+}
+@media  (min-width: 1500px) {
+  .grid-container{
+    max-width: 98%;
+    margin: 0 auto;
+    align-items: center;
+    height:auto;
+  }
+  .item3{
+    min-height: 700px;
+  }
+  .bigScreen, .borderTopBlue{
+    width:1400px;
+    margin: 0 auto;
+  }
+  .w3-jumbo{
+    letter-spacing: 2px;
+  }
+}
