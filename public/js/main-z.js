@@ -52,7 +52,6 @@ async function initFlatpickr() {
         const bookingData = {
           dateRange: dateStr,
         };
-        console.log(bookingData);
       }
     },
   });
@@ -68,25 +67,26 @@ const buildEventContent = (
   currentPage = 1,
   itemsPerPage = 10
 ) => {
-  console.log("events", ev);
+  console.log(ev);
+
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedEvents = ev.slice(startIndex, endIndex);
   document.getElementById(buildWhere).innerHTML = "";
   paginatedEvents.forEach((e) => {
-    console.log("event", e);
+    console.log(e);
     const eventBlock = document.createElement("div");
-    const [day, month, year] = e.eventDate.split(".");
-    const formattedDate = `${year}${month.padStart(2, "0")}${day.padStart(
-      2,
-      "0"
-    )}T000000`;
+    // const [day, month, year] = e.eventDate.split(".");
+    // const formattedDate = `${year}${month.padStart(2, "0")}${day.padStart(
+    //   2,
+    //   "0"
+    // )}T000000`;
     eventBlock.className =
       "flex flex-col bg-[#12457b] items-center justify-center rounded-2xl overflow-hidden p-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out text-white hover:bg-[#54af3c] relative";
     eventBlock.innerHTML = `
-            <h2 class='!text-lg !text-neutral-200 !m-0'>${e.eventDate}</h2>
+            <h2 class='!text-lg !text-neutral-200 !m-0'>${e.match_date}</h2>
             <h3 class="!text-3xl !mt-4 text-center !font-semibold">${
-              e.eventNameDesc
+              e.sport
             }</h3>
             <div class="flex items-center justify-between w-full mt-auto">
              <div class="">
@@ -104,7 +104,9 @@ const buildEventContent = (
               <div class="text-white" title="Dodaj u Google kalendar">
                 <a title="Dodaj u Google kalendar" href="https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(
                   e.eventNameDesc
-                )}&dates=${formattedDate}/${formattedDate}&details=${encodeURIComponent(
+                )}&dates=${e.match_date}/${
+      e.match_date
+    }&details=${encodeURIComponent(
       e.eventNameDesc
     )}&location=${encodeURIComponent(
       e.locationTag
@@ -209,9 +211,24 @@ flatpickr("#mainDatePicker", {
   onChange: function (selectedDates, dateStr, instance) {
     if (selectedDates.length === 2) {
       const dateArray = parseDateRange(dateStr);
-      const filteredEvents = main_Object.events.filter((event) =>
-        dateArray.includes(event.eventDate)
-      );
+      const modifiedDateArray = dateArray.map((date) => {
+        let dateNew = date.slice(0, -1);
+
+        if (dateNew[3] === "0") {
+          var tmp = dateNew.split(""); // convert to an array
+          tmp.splice(3, 1); // remove 1 element from the array (adjusting for
+          return tmp.join(""); // reconstruct the string
+        }
+
+        return dateNew;
+      });
+
+      const filteredEvents = main_Object.events.filter((event) => {
+        if (modifiedDateArray.includes(event.match_date)) {
+          return event;
+        }
+      });
+
       buildEventContent(filteredEvents, "eventsEvents", 1, 10);
     }
   },

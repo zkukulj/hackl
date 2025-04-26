@@ -6,9 +6,11 @@ const getVisibleScrollers = () => {
 };
 
 const showCurrentGroup = (currentGroup, visibleScrollers, isFirstIteration) => {
+  if (!currentGroup) {
+    return;
+  }
+
   visibleScrollers.forEach((scroller, index) => {
-    console.log("scroller", scroller);
-    console.log("currentGroup", currentGroup);
     const data = JSON.parse(JSON.stringify(currentGroup[index]));
     const eventNameDesc = data.eventNameDesc;
     const eventDate = data.eventDate;
@@ -31,7 +33,6 @@ const showCurrentGroup = (currentGroup, visibleScrollers, isFirstIteration) => {
 };
 
 const groupData = (data, numVisibleScrollers) => {
-  console.log("groupData", data);
   const groupedData = [];
   for (let i = 0; i < data.length; i += numVisibleScrollers) {
     groupedData.push(data.slice(i, i + numVisibleScrollers));
