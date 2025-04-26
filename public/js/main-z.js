@@ -60,7 +60,6 @@ async function initFlatpickr() {
 const contentSwitch = (modalId) => {
   document.getElementById(modalId).style.display = "block";
 };
-// ZA SPORTSKE DOGAĐAJE BLOCK BUILDER
 const buildEventContent = (
   ev,
   buildWhere,
@@ -84,40 +83,41 @@ const buildEventContent = (
     eventBlock.className =
       "flex flex-col bg-[#12457b] items-center justify-center rounded-2xl overflow-hidden p-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out text-white hover:bg-[#54af3c] relative";
     eventBlock.innerHTML = `
-            <h2 class='!text-lg !text-neutral-200 !m-0'>${e.match_date}</h2>
-            <h3 class="!text-3xl !mt-4 text-center !font-semibold">${
-              e.sport
-            }</h3>
-            <div class="flex items-center justify-between w-full mt-auto">
-             <div class="">
-              <i class="fa fa-facebook-official w3-hover-opacity"></i>
-              <i class="fa fa-instagram w3-hover-opacity"></i>
-              <i class="fa fa-snapchat w3-hover-opacity"></i>
-              <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-              <i class="fa fa-twitter w3-hover-opacity"></i>
-              <i class="fa fa-linkedin w3-hover-opacity"></i>
+          <h2 class='!text-lg !text-neutral-200 !m-0'>${e.match_date} ${
+      e.match_time
+    }</h2>
+          <h3 class="!text-3xl !mt-4 text-center !font-semibold">${e.sport}</h3>
+          <h3 class="!text-3xl !mt-4 text-center !font-semibold">
+            ${e.home_team} VS ${e.away_team}
+          </h3>
+          <div class="flex items-center justify-between w-full mt-auto">
+           <div class="">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+          </div>
+          <div class="reminder-icon !relative flex items-center gap-4">
+            <div class="text-white" onclick="popup.style.display = 'block';setReminderEvent(this)" title="Dodaj podsjetnik">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-clock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-5 2.66a1 1 0 0 0 -.993 .883l-.007 .117v5l.009 .131a1 1 0 0 0 .197 .477l.087 .1l3 3l.094 .082a1 1 0 0 0 1.226 0l.094 -.083l.083 -.094a1 1 0 0 0 0 -1.226l-.083 -.094l-2.707 -2.708v-4.585l-.007 -.117a1 1 0 0 0 -.993 -.883z" /></svg>
             </div>
-            <div class="reminder-icon !relative flex items-center gap-4">
-              <div class="text-white" onclick="popup.style.display = 'block';setReminderEvent(this)" title="Dodaj podsjetnik">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-clock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-5 2.66a1 1 0 0 0 -.993 .883l-.007 .117v5l.009 .131a1 1 0 0 0 .197 .477l.087 .1l3 3l.094 .082a1 1 0 0 0 1.226 0l.094 -.083l.083 -.094a1 1 0 0 0 0 -1.226l-.083 -.094l-2.707 -2.708v-4.585l-.007 -.117a1 1 0 0 0 -.993 -.883z" /></svg>
-              </div>
-              <div class="text-white" title="Dodaj u Google kalendar">
-                <a title="Dodaj u Google kalendar" href="https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(
-                  e.eventNameDesc
-                )}&dates=${e.match_date}/${
+            <div class="text-white" title="Dodaj u Google kalendar">
+              <a title="Dodaj u Google kalendar" href="https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(
+                e.eventNameDesc
+              )}&dates=${e.match_date}/${
       e.match_date
-    }&details=${encodeURIComponent(
-      e.eventNameDesc
-    )}&location=${encodeURIComponent(
-      e.locationTag
+    }&details=${encodeURIComponent(e.sport)}&location=${encodeURIComponent(
+      e.sport
     )}" target="_blank" rel="noopener noreferrer" >
-                  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-calendar"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 2a1 1 0 0 1 .993 .883l.007 .117v1h1a3 3 0 0 1 2.995 2.824l.005 .176v12a3 3 0 0 1 -2.824 2.995l-.176 .005h-12a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-12a3 3 0 0 1 2.824 -2.995l.176 -.005h1v-1a1 1 0 0 1 1.993 -.117l.007 .117v1h6v-1a1 1 0 0 1 1 -1zm3 7h-14v9.625c0 .705 .386 1.286 .883 1.366l.117 .009h12c.513 0 .936 -.53 .993 -1.215l.007 -.16v-9.625z" /><path d="M12 12a1 1 0 0 1 .993 .883l.007 .117v3a1 1 0 0 1 -1.993 .117l-.007 -.117v-2a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /></svg>
-                </a>
-              </div>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-calendar"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 2a1 1 0 0 1 .993 .883l.007 .117v1h1a3 3 0 0 1 2.995 2.824l.005 .176v12a3 3 0 0 1 -2.824 2.995l-.176 .005h-12a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-12a3 3 0 0 1 2.824 -2.995l.176 -.005h1v-1a1 1 0 0 1 1.993 -.117l.007 .117v1h6v-1a1 1 0 0 1 1 -1zm3 7h-14v9.625c0 .705 .386 1.286 .883 1.366l.117 .009h12c.513 0 .936 -.53 .993 -1.215l.007 -.16v-9.625z" /><path d="M12 12a1 1 0 0 1 .993 .883l.007 .117v3a1 1 0 0 1 -1.993 .117l-.007 -.117v-2a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /></svg>
+              </a>
             </div>
-           
-            </div>
-            `;
+          </div>
+         
+          </div>
+          `;
     document.getElementById(buildWhere).appendChild(eventBlock);
   });
 
@@ -267,5 +267,23 @@ document.querySelectorAll(".socialsShares").forEach((icon) => {
     }
 
     window.open(shareUrl, "_blank", "noopener,noreferrer");
+  });
+});
+
+document.querySelector("#main-search").addEventListener("change", function () {
+  const searchValue = this.value.toLowerCase();
+  console.log(searchValue);
+  return;
+
+  const eventBlocks = document.querySelectorAll(
+    ".w3-panel.w3-scrollers.w3-leftbar.w3-rightbar.w3-border-black.w3-margin-top"
+  );
+  eventBlocks.forEach((block) => {
+    const eventName = block.querySelector("h3").innerText.toLowerCase();
+    if (eventName.includes(searchValue)) {
+      block.style.display = "block";
+    } else {
+      block.style.display = "none";
+    }
   });
 });

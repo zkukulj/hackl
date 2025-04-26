@@ -26,7 +26,7 @@ if (typeof Worker !== "undefined") {
           formattedDateString.split("-").reverse().join("-")
         ).getMonth(); // get the month (0-11) and add 1 to make it (1-12)
 
-        return eventMonth == currentMonth;
+        return eventMonth + 1 == currentMonth;
       });
 
       loopScrollers(filteredEvents);

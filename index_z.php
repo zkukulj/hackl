@@ -86,7 +86,8 @@
     <button id="close-popup">❌</button>
   </div>
 
-  <main class="h-[70vh] py-20">
+  <main class="h-[70vh] py-20  bg-gradient-to-br from-sky-50 via-teal-50 to-white">
+    <div class="absolute inset-0 bg-[url('')] opacity-10 bg-repeat"></div>
     <div class="container max-w-8xl mx-auto flex flex-col items-center justify-center">
       <div class="w-2/3 md:w-1/3 lg:w-1/4 xl:w-2/5 mb-8">
         <img src="public/img/logo-sport-zagreb.svg?v=2" alt="" class="w-full" />
@@ -97,25 +98,62 @@
         <!-- <h2 class="!text-5xl text-center !mt-6">Zagreb nudi puno</h2> -->
       </hgroup>
 
-      <form action="" class="w-3/4 flex items-center justify-center mt-8 relative rounded-2xl overflow-hidden border border-[#12457b]">
-        <input type="text" class="w-full relative outline-none border-none p-4" placeholder="Pretraži sportska događanja.." />
+      <form action="" class="w-3/4 flex items-center justify-center mt-8 relative rounded-2xl border border-[#12457b]">
+        <input type="text" class="w-full relative outline-none border-none p-4" placeholder="Pretraži sportska događanja.." id="main-search" />
 
-        <button type="submit" class="bg-[#12457b] text-white p-4  absolute right-0 top-0 bottom-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+        <button type="submit" class="bg-[#12457b] text-white p-4  absolute right-0 top-0 bottom-0 rounded-r-2xl"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
             <path d="M21 21l-6 -6" />
-          </svg></button>
+          </svg>
+        </button>
+
+        <div class="absolute top-[100px] min-h-[200px] left-0 right-0 bg-red-500 rounded-2xl bg-gradient-to-br from-sky-50 via-teal-50 to-white">
+          <div class="grid grid-cols-2 gap-10 p-8 relative">
+            <div class="flex flex-col gap-4">
+              <a href="#" class="font-semibold">Sportski saves</a>
+              <a href="#" class="">Sportski saves</a>
+              <a href="#" class="">Sportski saves</a>
+              <a href="#" class="">Sportski saves</a>
+
+              <a href="#" class="px-6 py-4 mt-6 !bg-[#54af3c] !text-white rounded-2xl flex items-center gap-2">Prikazi sve</a>
+            </div>
+
+            <div class="absolute left-1/2 top-5 bottom-5 w-[1px] bg-black transform -translate-x-1/2"></div>
+
+            <div class="flex flex-col gap-4">
+              <a href="#" class="">Nogometna utakmica 18:00</a>
+              <a href="#" class="">Nogometna utakmica 18:00</a>
+              <a href="#" class="">Nogometna utakmica 18:00</a>
+              <a href="#" class="">Nogometna utakmica 18:00</a>
+
+              <a href="#" class="px-6 py-4 mt-6 !bg-[#54af3c] !text-white rounded-2xl flex items-center gap-2">Prikazi sve</a>
+            </div>
+          </div>
+        </div>
       </form>
+
+
     </div>
   </main>
 
   <!-- // * Lista sportova -->
+  <?php
+  ob_start();
+  require "functions/getSports.php";
+  $sports = ob_get_contents();
+  ob_end_clean();
+
+  $sports = json_decode($sports, true);
+
+  ?>
   <section class="mt-20">
     <div class="container mx-auto max-w-8xl">
       <div class="grid grid-cols-4 gap-10">
 
-        <?php for ($i = 0; $i < 8; $i++): ?>
-          <a href="#">
+        <?php
+        foreach ($sports as $sport): ?>
+          <a href="sport.php?sport_id=<?php echo $sport["id"]; ?>">
             <div class="flex flex-col bg-[#12457b] items-center justify-center rounded-2xl overflow-hidden p-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out text-white hover:bg-[#54af3c]">
               <div class="w-2/3 h-[100px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-play-handball w-full h-full">
@@ -127,11 +165,11 @@
                   <path d="M9.5 5a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1z" fill="currentColor" />
                 </svg>
               </div>
-              <h3 class=" text-2xl font-bold !mt-10">Nogomet</h3>
+              <h3 class=" text-2xl font-bold !mt-10"><?php echo $sport["sport"]; ?></h3>
               <!-- <p class="text-center ">Zagreb je dom mnogim nogometnim klubovima i natjecanjima.</p> -->
             </div>
           </a>
-        <?php endfor; ?>
+        <?php endforeach; ?>
       </div>
 
       <div class="mt-10 flex items-center justify-between w-full">
