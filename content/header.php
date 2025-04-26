@@ -1,5 +1,5 @@
 <!-- Navbar (sit on top) -->
-<div class="w3-top whitesmoke">
+<div class="z-40 top-0 whitesmoke sticky">
   <div class="w3-bar w3-card glass2 glass-border" id="myNavbar">
     <a href="#home" class="w3-bar-item w3-button w3-wide w3-bold">
     <img src="./public/img/zglogo.webp" style="height:24px;width:auto;" class="w3-image" alt="">
